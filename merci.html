@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merci pour votre demande — King Yachts · Luxury Charter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark-bg: #0d0d0d;
+            --navy: #0a1628;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --accent: #1a56db;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --border: #e0e0e0;
+            --card-bg: #fff;
+            --light-bg: #f7f8fa;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Language Switcher ── */
+        .language-switcher {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 300;
+            display: flex;
+            gap: 4px;
+            background: rgba(255,255,255,0.95);
+            padding: 4px;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            backdrop-filter: blur(8px);
+        }
+        .lang-btn {
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.25s;
+            color: var(--text-dark);
+            font-family: 'Jost', sans-serif;
+        }
+        .lang-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
+        .lang-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+
+        /* ── Header ── */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.07);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .logo-crown { color: var(--gold); font-size: 1.4rem; }
+        .logo-text { font-family: 'Cormorant Garamond', serif; }
+        .logo-line1 { display: block; font-size: 1.4rem; font-weight: 600; line-height: 1; letter-spacing: 3px; text-transform: uppercase; color: var(--text-dark); }
+        .logo-line2 { display: block; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+        nav { display: flex; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; }
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a:hover { color: var(--gold); }
+        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+
+        /* ── Hero ── */
+        .hero {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 50%, #0a2040 100%);
+        }
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.10) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(26,86,219,0.15) 0%, transparent 40%);
+        }
+        .hero-content { z-index: 10; text-align: center; }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+        .hero-sub {
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+        .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--gold); }
+        .breadcrumb span { color: var(--gold); }
+
+        /* ── Main ── */
+        .page-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 4rem 2rem 5rem;
+            flex: 1;
+        }
+
+        /* ── Confirmation card ── */
+        .confirm-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .confirm-header {
+            background: linear-gradient(135deg, var(--navy) 0%, #1a3a6e 100%);
+            padding: 3rem 2rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .confirm-header::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 30% 50%, rgba(201,168,76,0.12) 0%, transparent 60%),
+                              radial-gradient(circle at 70% 20%, rgba(26,86,219,0.15) 0%, transparent 50%);
+        }
+
+        .check-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: rgba(201,168,76,0.15);
+            border: 2px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+            animation: scaleIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+        }
+        .check-circle i {
+            font-size: 2.2rem;
+            color: var(--gold);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to   { transform: scale(1); opacity: 1; }
+        }
+
+        .confirm-header h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+            animation: fadeUp 0.6s 0.2s ease both;
+        }
+        .confirm-header p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.88rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 0.6rem;
+            position: relative;
+            z-index: 1;
+            animation: fadeUp 0.6s 0.3s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { transform: translateY(16px); opacity: 0; }
+            to   { transform: translateY(0); opacity: 1; }
+        }
+
+        /* ── Body content ── */
+        .confirm-body {
+            padding: 2.5rem 2.5rem 3rem;
+            animation: fadeUp 0.6s 0.4s ease both;
+        }
+
+        .confirm-body > p {
+            font-size: 1.02rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        /* ── Steps ── */
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            margin: 2rem 0 2.5rem;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            text-align: left;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+            padding: 1.2rem 1.5rem;
+            background: white;
+            border-bottom: 1px solid var(--border);
+            transition: background 0.2s;
+        }
+        .step:last-child { border-bottom: none; }
+        .step:hover { background: #fafafa; }
+
+        .step-num {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .step-content {}
+        .step-title {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--navy);
+            letter-spacing: 0.5px;
+        }
+        .step-desc {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            margin-top: 2px;
+            line-height: 1.5;
+        }
+
+        /* ── Info box ── */
+        .info-box {
+            background: #fff8e1;
+            border: 1px solid rgba(201,168,76,0.35);
+            border-radius: 10px;
+            padding: 1.1rem 1.4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.9rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+        .info-box i { color: var(--gold); font-size: 1rem; margin-top: 2px; flex-shrink: 0; }
+        .info-box p { font-size: 0.86rem; color: #7a6020; line-height: 1.6; }
+        .info-box strong { color: #5a4510; }
+
+        /* ── CTA buttons ── */
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--navy);
+            color: white;
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.25s;
+            font-family: 'Jost', sans-serif;
+        }
+        .btn-primary:hover { background: #0e1f3a; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(10,22,40,0.25); }
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: var(--navy);
+            text-decoration: none;
+            padding: 0.85rem 2rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            border: 1.5px solid var(--border);
+            transition: all 0.25s;
+            font-family: 'Jost', sans-serif;
+        }
+        .btn-secondary:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+        /* ── Contact strip ── */
+        .contact-strip {
+            margin-top: 3rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
+        }
+        .contact-strip p {
+            font-size: 0.88rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--navy);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-link i { color: var(--gold); font-size: 0.9rem; }
+        .contact-link:hover { color: var(--gold); }
+
+        /* ── WhatsApp ── */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25d366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 200;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .whatsapp-button:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(0,0,0,0.25); }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+            margin-top: auto;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .footer-section a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.88rem;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover { color: var(--gold-light); }
+        .footer-section p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.82rem;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 640px) {
+            header { padding: 1rem; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.2rem; letter-spacing: 4px; }
+            .confirm-header { padding: 2.5rem 1.5rem 2rem; }
+            .confirm-header h2 { font-size: 1.8rem; }
+            .confirm-body { padding: 2rem 1.5rem 2.5rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .cta-group { flex-direction: column; align-items: center; }
+            .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language switcher -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<!-- Header -->
+<header>
+    <a href="http://king-yachts.com" class="logo">
+        <span class="logo-crown">♛</span>
+        <span class="logo-text">
+            <span class="logo-line1">King Yachts</span>
+            <span class="logo-line2">Luxury Charter</span>
+        </span>
+    </a>
+    <nav>
+        <a href="http://king-yachts.com" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="cannes.html" data-fr="Cannes" data-en="Cannes">Cannes</a>
+        <a href="monaco.html" data-fr="Monaco" data-en="Monaco">Monaco</a>
+        <a href="caribbean.html" data-fr="Caraïbes" data-en="Caribbean">Caraïbes</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+        <h1 data-fr="Confirmation" data-en="Confirmation">Confirmation</h1>
+        <p class="hero-sub" data-fr="Demande de réservation reçue" data-en="Booking request received">Demande de réservation reçue</p>
+        <div class="breadcrumb">
+            <a href="http://king-yachts.com" data-fr="Accueil" data-en="Home">Accueil</a>
+            <i class="fa fa-chevron-right" style="font-size:0.6rem"></i>
+            <span data-fr="Confirmation" data-en="Confirmation">Confirmation</span>
+        </div>
+    </div>
+</div>
+
+<!-- Main -->
+<div class="page-container">
+    <div class="confirm-card">
+
+        <!-- Card header -->
+        <div class="confirm-header">
+            <div class="check-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h2 data-fr="Merci !" data-en="Thank you!">Merci !</h2>
+            <p data-fr="Votre demande a bien été envoyée" data-en="Your request has been sent">Votre demande a bien été envoyée</p>
+        </div>
+
+        <!-- Card body -->
+        <div class="confirm-body">
+
+            <p data-fr="Nous avons bien reçu votre demande de réservation et notre équipe vous contactera dans les meilleurs délais pour finaliser les détails de votre charter." data-en="We have received your booking request and our team will contact you as soon as possible to finalise the details of your charter.">
+                Nous avons bien reçu votre demande de réservation et notre équipe vous contactera dans les meilleurs délais pour finaliser les détails de votre charter.
+            </p>
+
+            <!-- Info box -->
+            <div class="info-box">
+                <i class="fa-solid fa-envelope-open-text"></i>
+                <p>
+                    <strong data-fr="Un email de confirmation vous a été envoyé." data-en="A confirmation email has been sent to you.">Un email de confirmation vous a été envoyé.</strong>
+                    <span data-fr=" Pensez à vérifier vos courriers indésirables si vous ne le recevez pas dans les prochaines minutes." data-en=" Please check your spam folder if you don't receive it within a few minutes."> Pensez à vérifier vos courriers indésirables si vous ne le recevez pas dans les prochaines minutes.</span>
+                </p>
+            </div>
+
+            <!-- Steps -->
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <div class="step-title" data-fr="Demande reçue" data-en="Request received">Demande reçue</div>
+                        <div class="step-desc" data-fr="Votre demande est enregistrée dans notre système." data-en="Your request has been recorded in our system.">Votre demande est enregistrée dans notre système.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <div class="step-title" data-fr="Confirmation sous 24 h" data-en="Confirmation within 24h">Confirmation sous 24 h</div>
+                        <div class="step-desc" data-fr="Un conseiller King Yachts vous contacte par email ou téléphone pour valider la disponibilité et les détails." data-en="A King Yachts advisor will contact you by email or phone to confirm availability and details.">Un conseiller King Yachts vous contacte par email ou téléphone pour valider la disponibilité et les détails.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <div class="step-title" data-fr="Acompte de 30 %" data-en="30% deposit">Acompte de 30 %</div>
+                        <div class="step-desc" data-fr="Un lien de paiement sécurisé vous sera envoyé pour régler l'acompte et bloquer votre yacht." data-en="A secure payment link will be sent to you to pay the deposit and secure your yacht.">Un lien de paiement sécurisé vous sera envoyé pour régler l'acompte et bloquer votre yacht.</div>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <div class="step-title" data-fr="Embarquement !" data-en="All aboard!">Embarquement !</div>
+                        <div class="step-desc" data-fr="Votre expérience de luxe en mer commence. L'équipage vous accueillera à bord." data-en="Your luxury experience at sea begins. The crew will welcome you aboard.">Votre expérience de luxe en mer commence. L'équipage vous accueillera à bord.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="cta-group">
+                <a href="http://king-yachts.com" class="btn-primary">
+                    <i class="fa-solid fa-house"></i>
+                    <span data-fr="Retour à l'accueil" data-en="Back to home">Retour à l'accueil</span>
+                </a>
+                <a href="https://wa.me/33753150620" target="_blank" class="btn-secondary">
+                    <i class="fa-brands fa-whatsapp" style="color:#25d366"></i>
+                    <span data-fr="Nous écrire sur WhatsApp" data-en="WhatsApp us">Nous écrire sur WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Contact strip -->
+            <div class="contact-strip">
+                <p data-fr="Une question ? Notre équipe est disponible 7j/7" data-en="Any questions? Our team is available 7 days a week">Une question ? Notre équipe est disponible 7j/7</p>
+                <div class="contact-links">
+                    <a href="tel:+33753150620" class="contact-link">
+                        <i class="fa-solid fa-phone"></i>
+                        +33 7 53 15 06 20
+                    </a>
+                    <a href="mailto:contact@king-yachts.com" class="contact-link">
+                        <i class="fa-solid fa-envelope"></i>
+                        contact@king-yachts.com
+                    </a>
+                    <a href="#" class="contact-link">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Port Pierre Canto, Cannes
+                    </a>
+                </div>
+            </div>
+
+        </div><!-- /confirm-body -->
+    </div><!-- /confirm-card -->
+</div><!-- /page-container -->
+
+<!-- WhatsApp -->
+<a href="https://wa.me/33753150620" target="_blank" class="whatsapp-button" title="WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>King Yachts</h4>
+            <p>Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Navigation</h4>
+            <a href="http://king-yachts.com">Accueil</a>
+            <a href="cannes.html">Cannes</a>
+            <a href="monaco.html">Monaco</a>
+            <a href="caribbean.html">Caraïbes</a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="tel:+33753150620">+33 7 53 15 06 20</a>
+            <a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a>
+            <a href="#">Port Pierre Canto, Cannes, France</a>
+        </div>
+        <div class="footer-section">
+            <h4>Horaires</h4>
+            <a href="#">Lun – Ven : 9h – 19h</a>
+            <a href="#">Sam/Dim : 10h – 20h</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Operated by ALTRIVON GROUP LTD — King Yachts · Luxury Charter</p>
+    </div>
+</footer>
+
+<script>
+    // Language switcher
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function () {
+            var lang = this.dataset.lang;
+            document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
+            this.classList.add('active');
+            document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
+                var val = el.getAttribute('data-' + lang);
+                if (!val) return;
+                if (el.tagName === 'OPTION') { el.textContent = val; return; }
+                if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+                    el.childNodes[0].textContent = val;
+                } else if (!el.querySelector('i') && !el.querySelector('img')) {
+                    el.textContent = val;
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>

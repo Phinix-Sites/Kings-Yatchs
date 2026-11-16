@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Yachts — Location de Yachts de Luxe</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18092512479">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18092512479');
+</script>
+    <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+        --navy:   #0a1628;
+        --navy2:  #0f1f2e;
+        --gold:   #c9a84c;
+        --gold2:  #e8c97a;
+        --white:  #ffffff;
+        --off:    #f7f8fa;
+        --text:   #1a1a1a;
+        --muted:  #666;
+        --border: #e0e0e0;
+        --accent: #1a56db;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Jost', sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* ─── LANGUAGE SWITCHER ─────────────────────────────── */
+    .lang-switcher {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 400;
+        display: flex;
+        gap: 4px;
+        background: rgba(255,255,255,0.95);
+        padding: 4px;
+        border-radius: 6px;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+        backdrop-filter: blur(10px);
+    }
+    .lang-btn {
+        padding: 5px 13px;
+        border: 1px solid var(--border);
+        background: transparent;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+        transition: all .22s;
+        color: var(--text);
+        font-family: 'Jost', sans-serif;
+    }
+    .lang-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .lang-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    header {
+        background: rgba(255,255,255,0.97);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 300;
+        box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+        backdrop-filter: blur(12px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .logo-crown { color: var(--gold); font-size: 1.5rem; line-height: 1; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+    .logo-sub {
+        font-size: 0.6rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 400;
+        margin-top: 2px;
+    }
+
+    nav {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+    }
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        transition: color .25s;
+        position: relative;
+    }
+    nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 0;
+        width: 0; height: 1px;
+        background: var(--gold);
+        transition: width .3s;
+    }
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after { width: 100%; }
+
+    .nav-cta {
+        padding: 8px 22px;
+        background: var(--navy);
+        color: #fff !important;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        transition: background .25s !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+    .nav-cta::after { display: none !important; }
+
+    .header-search {
+        cursor: pointer;
+        color: var(--text);
+        font-size: 1.1rem;
+        transition: color .25s;
+    }
+    .header-search:hover { color: var(--gold); }
+
+    /* ─── HERO (VIDEO) ──────────────────────────────────── */
+    .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        overflow: hidden;
+    }
+    .hero video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            105deg,
+            rgba(10,22,40,0.55) 0%,
+            rgba(10,22,40,0.2) 60%,
+            rgba(10,22,40,0.5) 100%
+        );
+        z-index: 2;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        width: 48%;
+        padding: 4rem 5rem 4rem 4rem;
+        text-align: right;
+    }
+    .hero-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+    }
+    .hero h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 4.2rem;
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.1;
+        letter-spacing: 1px;
+        margin-bottom: 1.8rem;
+    }
+    .hero-line { display: block; }
+    .hero-line.italic { font-style: italic; }
+    .hero-desc {
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 2.5rem;
+        line-height: 1.8;
+        font-weight: 300;
+    }
+    .hero-btns { display: flex; gap: 1rem; justify-content: flex-end; }
+    .btn-primary {
+        display: inline-block;
+        padding: 14px 36px;
+        background: var(--gold);
+        color: var(--navy);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: all .3s;
+    }
+    .btn-primary:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(201,168,76,0.35); }
+    .btn-ghost {
+        display: inline-block;
+        padding: 14px 36px;
+        border: 1.5px solid rgba(255,255,255,0.7);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: all .3s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+    /* Scroll indicator */
+    .scroll-hint {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        color: rgba(255,255,255,0.6);
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        animation: bounce 2s infinite;
+    }
+    .scroll-hint i { font-size: 1rem; }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* ─── STATS BAR ─────────────────────────────────────── */
+    .stats-bar {
+        background: var(--navy);
+        padding: 2rem 4rem;
+        display: flex;
+        justify-content: center;
+        gap: 0;
+    }
+    .stat-item {
+        flex: 1;
+        max-width: 200px;
+        text-align: center;
+        padding: 0 2rem;
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.4rem;
+        color: var(--gold);
+        font-weight: 300;
+        line-height: 1;
+    }
+    .stat-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.55); margin-top: 6px; }
+
+    /* ─── SECTION SHARED ────────────────────────────────── */
+    .section-header { margin-bottom: 3.5rem; }
+    .section-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.8rem;
+        font-weight: 400;
+        color: var(--text);
+        line-height: 1.1;
+    }
+    .section-title.light { color: #fff; }
+    .title-line { display: block; }
+
+    /* ─── DESTINATIONS ──────────────────────────────────── */
+    .destinations-section {
+        padding: 7rem 2.5rem;
+        background: var(--off);
+    }
+    .destinations-container { max-width: 1400px; margin: 0 auto; }
+    .destinations-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+    }
+    .dest-card {
+        position: relative;
+        height: 420px;
+        border-radius: 6px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform .4s, box-shadow .4s;
+    }
+    .dest-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+    .dest-card img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        transition: transform .6s;
+    }
+    .dest-card:hover img { transform: scale(1.06); }
+    .dest-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(10,22,40,0.85) 0%, rgba(10,22,40,0.1) 60%);
+        display: flex;
+        align-items: flex-end;
+        padding: 2.5rem;
+    }
+    .dest-info { color: #fff; width: 100%; }
+    .dest-tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 0.6rem;
+    }
+    .dest-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 1;
+        margin-bottom: 0.5rem;
+    }
+    .dest-desc { font-size: 0.85rem; color: rgba(255,255,255,0.8); }
+    .dest-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 1.2rem;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        transition: gap .3s;
+    }
+    .dest-card:hover .dest-arrow { gap: 14px; }
+
+    /* ─── EXPERIENCE (dark tiles) ───────────────────────── */
+    .experience-section {
+        padding: 7rem 2.5rem;
+        background: var(--navy2);
+        color: #fff;
+    }
+    .experience-container { max-width: 1200px; margin: 0 auto; }
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+    .exp-card {
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 8px;
+        padding: 2.5rem 2rem;
+        transition: all .3s;
+    }
+    .exp-card:hover { transform: translateY(-8px); background: rgba(255,255,255,0.08); border-color: rgba(201,168,76,0.3); }
+    .exp-icon { font-size: 2.2rem; margin-bottom: 1.5rem; }
+    .exp-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; margin-bottom: 1rem; font-weight: 400; }
+    .exp-card p { font-size: 0.875rem; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+    /* ─── YACHT HIGHLIGHT (image + text) ───────────────── */
+    .yacht-highlight {
+        display: flex;
+        align-items: stretch;
+        min-height: 520px;
+        background: var(--navy);
+    }
+    .yacht-highlight-image {
+        flex: 1;
+        background: url('yacht.jpg') center/cover no-repeat;
+        min-height: 400px;
+    }
+    .yacht-highlight-text {
+        width: 440px;
+        flex-shrink: 0;
+        background: #fff;
+        padding: 5rem 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        box-shadow: -10px 0 40px rgba(0,0,0,0.15);
+    }
+    .yacht-highlight-text .section-eyebrow { margin-bottom: 0.8rem; }
+    .yacht-highlight-text h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 2.4rem;
+        font-weight: 400;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        color: var(--navy);
+    }
+    .yacht-highlight-text p { font-size: 0.9rem; color: var(--muted); line-height: 1.8; margin-bottom: 2rem; }
+    .btn-dark {
+        display: inline-block;
+        padding: 13px 32px;
+        background: var(--navy);
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-weight: 500;
+        border-radius: 3px;
+        transition: background .3s;
+        align-self: flex-start;
+    }
+    .btn-dark:hover { background: var(--accent); }
+
+    /* ─── ABOUT HERO ────────────────────────────────────── */
+    .about-hero {
+        position: relative;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        background: var(--navy);
+    }
+    .about-hero img {
+        position: absolute;
+        inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        opacity: 0.55;
+    }
+    .about-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(10,22,40,0.3), rgba(10,22,40,0.7));
+        z-index: 2;
+    }
+    .about-hero-content {
+        position: relative;
+        z-index: 3;
+        color: #fff;
+        max-width: 860px;
+        padding: 0 2.5rem;
+    }
+    .about-hero-content h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 3rem;
+        font-weight: 300;
+        margin-bottom: 1.8rem;
+        line-height: 1.25;
+        letter-spacing: 1px;
+    }
+    .about-hero-text {
+        font-size: 0.82rem;
+        line-height: 1.9;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.8);
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+    }
+    .btn-outline-white {
+        display: inline-block;
+        padding: 13px 38px;
+        border: 1.5px solid rgba(255,255,255,0.8);
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.78rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        border-radius: 3px;
+        transition: all .3s;
+    }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.12); border-color: #fff; }
+
+    /* ─── WHY US ────────────────────────────────────────── */
+    .why-section {
+        padding: 7rem 2.5rem;
+        background: var(--off);
+    }
+    .why-container { max-width: 1100px; margin: 0 auto; text-align: center; }
+    .why-intro {
+        font-size: 1rem;
+        color: var(--muted);
+        max-width: 640px;
+        margin: 1.5rem auto 0;
+        line-height: 1.8;
+    }
+    .why-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        margin-top: 4rem;
+    }
+    .why-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2.5rem 1.8rem;
+        transition: all .3s;
+        text-align: center;
+    }
+    .why-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(0,0,0,0.09); border-color: var(--gold); }
+    .why-icon { font-size: 2.2rem; margin-bottom: 1.2rem; }
+    .why-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 0.8rem; font-weight: 600; }
+    .why-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.7; }
+
+    /* ─── FAQ ───────────────────────────────────────────── */
+    .faq-section {
+        padding: 7rem 2.5rem;
+        background: #fff;
+    }
+    .faq-container { max-width: 760px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 3.5rem; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        padding: 1.4rem 0;
+        font-size: 1.05rem;
+        font-family: 'Jost', sans-serif;
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text);
+        transition: color .25s;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon {
+        font-size: 1.4rem;
+        transition: transform .3s;
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-left: 1rem;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .35s ease, padding .3s;
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 0.9rem;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.4rem; }
+
+    /* ─── WHATSAPP ──────────────────────────────────────── */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        width: 58px;
+        height: 58px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 200;
+        box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+        transition: transform .3s, box-shadow .3s;
+        text-decoration: none;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
+    .whatsapp-btn i { color: #fff; font-size: 1.7rem; }
+    .whatsapp-label {
+        position: absolute;
+        left: 70px;
+        background: #fff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        white-space: nowrap;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text);
+        display: none;
+        pointer-events: none;
+    }
+    .whatsapp-btn:hover .whatsapp-label { display: block; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+        background: var(--navy);
+        color: #fff;
+        padding: 4rem 2.5rem 1.5rem;
+    }
+    .footer-top {
+        max-width: 1300px;
+        margin: 0 auto 3rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.2rem;
+    }
+    .footer-brand .logo-crown { color: var(--gold); font-size: 1.3rem; }
+    .footer-brand .logo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+    .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+    .footer-col h5 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .footer-col a {
+        display: block;
+        color: rgba(255,255,255,0.55);
+        text-decoration: none;
+        font-size: 0.875rem;
+        margin-bottom: 0.55rem;
+        transition: color .25s;
+    }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(255,255,255,0.35);
+        font-size: 0.8rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color .25s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 1100px) {
+        .experience-grid, .why-grid { grid-template-columns: repeat(2, 1fr); }
+        .footer-top { grid-template-columns: 1fr 1fr; }
+        .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 900px) {
+        .destinations-grid { grid-template-columns: 1fr 1fr; }
+        .yacht-highlight { flex-direction: column-reverse; }
+        .yacht-highlight-image { min-height: 300px; }
+        .yacht-highlight-text { width: 100%; padding: 3rem 2.5rem; }
+        .hero h1 { font-size: 3rem; }
+        .hero-content { width: 65%; padding: 3rem; }
+    }
+    @media (max-width: 640px) {
+        header { flex-direction: column; gap: 1rem; padding: 1rem 1.5rem; }
+        nav { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .nav-cta { display: none; }
+        .hero { height: 100svh; justify-content: center; }
+        .hero-content { width: 100%; text-align: center; padding: 2rem 1.5rem; }
+        .hero-btns { justify-content: center; flex-wrap: wrap; }
+        .hero h1 { font-size: 2.5rem; }
+        .destinations-grid { grid-template-columns: 1fr; }
+        .experience-grid, .why-grid { grid-template-columns: 1fr; }
+        .stats-bar { flex-wrap: wrap; padding: 2rem; }
+        .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 1.2rem 0; }
+        .stat-item:last-child { border-bottom: none; }
+        .footer-top { grid-template-columns: 1fr; }
+        .about-hero-content h1 { font-size: 2rem; }
+        .section-title { font-size: 2rem; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<!-- Header -->
+<header>
+    <a href="#home" class="logo">
+        <span class="logo-crown">♛</span>
+        <div class="logo-text">
+            <span class="logo-name">King Yachts</span>
+            <span class="logo-sub">Luxury Charter</span>
+        </div>
+    </a>
+    <nav>
+        <a href="http://king-yachts.com"        data-fr="Accueil"   data-en="Home">Accueil</a>
+        <a href="cannes.html"      data-fr="Cannes"    data-en="Cannes">Cannes</a>
+        <a href="monaco.html"      data-fr="Monaco"    data-en="Monaco">Monaco</a>
+        <a href="caribbean.html"   data-fr="Caraïbes"  data-en="Caribbean">Caraïbes</a>
+        <a href="legal.html" data-fr="Mentions Légales" data-en="Legal">Mentions Légales</a>
+        <a href="#faq"         data-fr="FAQ"       data-en="FAQ">FAQ</a>
+        
+    </nav>
+    <div class="header-search" onclick="document.getElementById('destinations').scrollIntoView({behavior:'smooth'})">
+        <i class="fas fa-search"></i>
+    </div>
+</header>
+
+<!-- Hero — video conservé -->
+<section class="hero" id="home">
+    <video autoplay muted loop playsinline>
+        <source src="hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <p class="hero-eyebrow" data-fr="Méditerranée · Caraïbes · Monaco" data-en="Mediterranean · Caribbean · Monaco">Méditerranée · Caraïbes · Monaco</p>
+        <h1>
+            <span class="hero-line" data-fr="Apportez la joie" data-en="Bring Joy">Apportez la joie</span>
+            <span class="hero-line italic" data-fr="à la vie." data-en="to Life.">à la vie.</span>
+        </h1>
+        <p class="hero-desc"
+           data-fr="Une flotte d'exception pour des expériences inoubliables sur les plus belles eaux du monde."
+           data-en="An exceptional fleet for unforgettable experiences on the world's most beautiful waters.">
+            Une flotte d'exception pour des expériences inoubliables sur les plus belles eaux du monde.
+        </p>
+        </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+    <div class="stat-item">
+        <div class="stat-number">10</div>
+        <div class="stat-label" data-fr="Yachts de Luxe" data-en="Luxury Yachts">Yachts de Luxe</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">3</div>
+        <div class="stat-label" data-fr="Destinations" data-en="Destinations">Destinations</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label" data-fr="Années d'Expérience" data-en="Years of Experience">Années d'Expérience</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label" data-fr="Clients Satisfaits" data-en="Satisfied Clients">Clients Satisfaits</div>
+    </div>
+</div>
+
+<!-- Destinations Section -->
+<section class="destinations-section" id="destinations">
+    <div class="destinations-container">
+        <div class="section-header">
+            <span class="section-eyebrow" data-fr="Nos Destinations" data-en="Our Destinations">Nos Destinations</span>
+            <h2 class="section-title">
+                <span class="title-line" data-fr="Destinations de Location" data-en="Yacht Charter">Destinations de Location</span>
+                <span class="title-line" data-fr="de Yachts" data-en="Destinations">de Yachts</span>
+            </h2>
+        </div>
+
+        <div class="destinations-grid">
+            <!-- Cannes -->
+            <div class="dest-card" id="cannes">
+                <img src="cannes.png" alt="Cannes">
+                <div class="dest-overlay">
+                    <div class="dest-info">
+                        <span class="dest-tag" data-fr="Côte d'Azur, France" data-en="French Riviera, France">Côte d'Azur, France</span>
+                        <div class="dest-name" data-fr="Cannes" data-en="Cannes">Cannes</div>
+                        <div class="dest-desc" data-fr="Profitez de la glamour de la Côte d'Azur" data-en="Experience the glamour of the French Riviera">Profitez de la glamour de la Côte d'Azur</div>
+                        <a class="dest-arrow" href="cannes.html">
+                            <span data-fr="Découvrir" data-en="Discover">Découvrir</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Monaco -->
+            <div class="dest-card" id="monaco">
+                <img src="monaco.png" alt="Monaco">
+                <div class="dest-overlay">
+                    <div class="dest-info">
+                        <span class="dest-tag" data-fr="Principauté de Monaco" data-en="Principality of Monaco">Principauté de Monaco</span>
+                        <div class="dest-name" data-fr="Monaco" data-en="Monaco">Monaco</div>
+                        <div class="dest-desc" data-fr="Découvrez le luxe et l'élégance absolus" data-en="Discover ultimate luxury and elegance">Découvrez le luxe et l'élégance absolus</div>
+                        <a class="dest-arrow" href="monaco.html">
+                            <span data-fr="Découvrir" data-en="Discover">Découvrir</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Caribbean -->
+            <div class="dest-card" id="caribbean">
+                <img src="caribbean.png" alt="Caribbean">
+                <div class="dest-overlay">
+                    <div class="dest-info">
+                        <span class="dest-tag" data-fr="Îles des Caraïbes" data-en="Caribbean Islands">Îles des Caraïbes</span>
+                        <div class="dest-name" data-fr="Caraïbes" data-en="Caribbean">Caraïbes</div>
+                        <div class="dest-desc" data-fr="Naviguez dans les eaux turquoise du paradis" data-en="Sail through turquoise tropical waters">Naviguez dans les eaux turquoise du paradis</div>
+                        <a class="dest-arrow" href="caribbean.html">
+                            <span data-fr="Découvrir" data-en="Discover">Découvrir</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Experience Section (dark) -->
+<section class="experience-section">
+    <div class="experience-container">
+        <div class="section-header" style="text-align:center">
+            <span class="section-eyebrow" data-fr="L'Excellence King Yachts" data-en="The King Yachts Experience">L'Excellence King Yachts</span>
+            <h2 class="section-title light" data-fr="Une Expérience Sans Égale" data-en="An Unparalleled Experience">Une Expérience Sans Égale</h2>
+        </div>
+        <div class="experience-grid">
+            <div class="exp-card">
+                <div class="exp-icon">⚓</div>
+                <h3 data-fr="Flotte Premium" data-en="Premium Fleet">Flotte Premium</h3>
+                <p data-fr="10 yachts soigneusement sélectionnés, de 20 à 62 mètres, pour toutes les occasions." data-en="10 carefully selected yachts, from 20 to 62 meters, for every occasion.">10 yachts soigneusement sélectionnés, de 20 à 62 mètres, pour toutes les occasions.</p>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon">👨‍✈️</div>
+                <h3 data-fr="Équipage Expert" data-en="Expert Crew">Équipage Expert</h3>
+                <p data-fr="Des équipages professionnels certifiés qui s'assurent que chaque moment est parfait." data-en="Certified professional crews ensuring every moment is flawless.">Des équipages professionnels certifiés qui s'assurent que chaque moment est parfait.</p>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon">🌍</div>
+                <h3 data-fr="3 Destinations" data-en="3 Destinations">3 Destinations</h3>
+                <p data-fr="Monaco, Cannes et les Caraïbes — les destinations les plus exclusives du monde." data-en="Monaco, Cannes and the Caribbean — the world's most exclusive destinations.">Monaco, Cannes et les Caraïbes — les destinations les plus exclusives du monde.</p>
+            </div>
+            <div class="exp-card">
+                <div class="exp-icon">✨</div>
+                <h3 data-fr="Sur Mesure" data-en="Fully Tailored">Sur Mesure</h3>
+                <p data-fr="Chaque charter est personnalisé selon vos désirs — itinéraire, gastronomie, activités." data-en="Every charter customized to your desires — itinerary, gastronomy, activities.">Chaque charter est personnalisé selon vos désirs — itinéraire, gastronomie, activités.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Yacht Highlight (image + text) — utilise yacht.jpg -->
+<div class="yacht-highlight">
+    <div class="yacht-highlight-image"></div>
+    <div class="yacht-highlight-text">
+        <span class="section-eyebrow" data-fr="Notre Engagement" data-en="Our Commitment">Notre Engagement</span>
+        <h2 data-fr="Affréter un Yacht et vivre l'apogée du Luxe" data-en="Charter a Yacht and Experience the Pinnacle of Luxury">Affréter un Yacht et vivre l'apogée du Luxe</h2>
+        <p data-fr="King Yachts Rent est reconnu pour offrir des expériences exclusives de location de yachts de luxe dans les destinations les plus prestigieuses. Notre équipe dévouée travaille en étroite collaboration avec vous pour créer votre voyage parfait." data-en="King Yachts Rent is known for delivering exclusive luxury yacht charter experiences in the world's most prestigious destinations. Our dedicated team works closely with you to craft your perfect voyage.">
+            King Yachts Rent est reconnu pour offrir des expériences exclusives de location de yachts de luxe dans les destinations les plus prestigieuses. Notre équipe dévouée travaille en étroite collaboration avec vous pour créer votre voyage parfait.
+        </p>
+    
+    </div>
+</div>
+
+<!-- About Hero — utilise about.png -->
+<section class="about-hero" id="about">
+    <img src="about.png" alt="À Propos de King Yachts">
+    <div class="about-hero-overlay"></div>
+    <div class="about-hero-content">
+        <h1 data-fr="Affréter un Yacht et vivre l'apogée du Luxe" data-en="Charter a Yacht and experience the pinnacle of Luxury">
+            Affréter un Yacht et vivre l'apogée du Luxe
+        </h1>
+        <p class="about-hero-text"
+           data-fr="Le choix d'un affrètement de yacht de luxe est la première étape pour créer vos vacances de rêve en yacht en Méditerranée. Que vous désiriez un affrètement de yacht d'équipage, privé ou d'entreprise, nous proposons une variété d'itinéraires de yachts de luxe personnalisés selon vos spécifications dans toute la Méditerranée."
+           data-en="Choosing your luxury yacht charter is the first step to creating your dream yachting vacation in the Mediterranean. Whether it's a crewed, private, or corporate yacht rental you desire, we offer a variety of hand selected luxury yachting itineraries custom tailored to your specifications throughout the Mediterranean.">
+            Le choix d'un affrètement de yacht de luxe est la première étape pour créer vos vacances de rêve en yacht en Méditerranée. Que vous désiriez un affrètement de yacht d'équipage, privé ou d'entreprise, nous proposons une variété d'itinéraires de yachts de luxe personnalisés selon vos spécifications dans toute la Méditerranée.
+        </p>
+    
+    </div>
+</section>
+
+<!-- Why Us -->
+<section class="why-section">
+    <div class="why-container">
+        <div class="section-header">
+            <span class="section-eyebrow" data-fr="Pourquoi Nous Choisir" data-en="Why Choose Us">Pourquoi Nous Choisir</span>
+            <h2 class="section-title" data-fr="Pourquoi choisir King Yachts Rent" data-en="Why Choose King Yachts Rent">Pourquoi choisir King Yachts Rent</h2>
+        </div>
+        <p class="why-intro"
+           data-fr="King Yachts Rent est reconnu pour offrir des expériences exclusives de location de yachts de luxe dans les destinations les plus prestigieuses du monde."
+           data-en="King Yachts Rent is known for delivering exclusive luxury yacht charter experiences in the world's most prestigious destinations.">
+            King Yachts Rent est reconnu pour offrir des expériences exclusives de location de yachts de luxe dans les destinations les plus prestigieuses du monde.
+        </p>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">⚓</div>
+                <h3 data-fr="Flotte de Luxe" data-en="Luxury Fleet">Flotte de Luxe</h3>
+                <p data-fr="Une flotte sélectionnée de Superyachts, Yachts à Moteur, Yachts à Voile et Catamarans." data-en="A carefully selected fleet of Superyachts, Motor Yachts, Sailing Yachts and Catamarans.">Une flotte sélectionnée de Superyachts, Yachts à Moteur, Yachts à Voile et Catamarans.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">👨‍✈️</div>
+                <h3 data-fr="Équipage Professionnel" data-en="Professional Crew">Équipage Professionnel</h3>
+                <p data-fr="Nos équipages hautement qualifiés garantissent un service personnalisé et une expérience exceptionnelle." data-en="Our highly trained crew ensures personalized service and an unforgettable experience.">Nos équipages hautement qualifiés garantissent un service personnalisé et une expérience exceptionnelle.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🌍</div>
+                <h3 data-fr="Destinations Exclusives" data-en="Exclusive Destinations">Destinations Exclusives</h3>
+                <p data-fr="Nous opérons exclusivement à Monaco, Cannes et dans les Caraïbes." data-en="We operate exclusively in Monaco, Cannes and the Caribbean.">Nous opérons exclusivement à Monaco, Cannes et dans les Caraïbes.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">✨</div>
+                <h3 data-fr="Expériences Sur Mesure" data-en="Tailored Experiences">Expériences Sur Mesure</h3>
+                <p data-fr="Chaque charter est entièrement personnalisé selon vos préférences." data-en="Every charter is fully customized to match your preferences.">Chaque charter est entièrement personnalisé selon vos préférences.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+    <div class="faq-container">
+        <div class="faq-header">
+            <span class="section-eyebrow" data-fr="Vos Questions" data-en="Your Questions">Vos Questions</span>
+            <h2 class="section-title" data-fr="Questions Fréquentes" data-en="Frequently Asked Questions">Questions Fréquentes</h2>
+        </div>
+        
+        <div class="faq-item">
+    <button class="faq-question">
+        <span data-fr="Comment fonctionne la réservation ?" data-en="How does the booking process work?">
+            Comment fonctionne la réservation ?
+        </span>
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer" 
+         data-fr="Le client sélectionne simplement ses dates, le port de départ souhaité et procède à une réservation en ligne en versant un acompte de 10 % du montant total. Le solde restant est à régler le jour de l’embarquement."
+         data-en="The client simply selects their preferred dates and departure port, then confirms the booking online by paying a 10% deposit of the total amount. The remaining balance is paid on the day of embarkation.">
+        Le client sélectionne simplement ses dates, le port de départ souhaité et procède à une réservation en ligne en versant un acompte de 10 % du montant total. Le solde restant est à régler le jour de l’embarquement.
+    </div>
+</div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span data-fr="Dans quelles destinations opérez-vous ?" data-en="Which destinations do you operate in?">Dans quelles destinations opérez-vous ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" data-fr="Nous opérons exclusivement à Monaco, Cannes et dans les Caraïbes — trois des destinations nautiques les plus prisées au monde." data-en="We operate exclusively in Monaco, Cannes and the Caribbean — three of the world's most coveted yachting destinations.">
+                Nous opérons exclusivement à Monaco, Cannes et dans les Caraïbes — trois des destinations nautiques les plus prisées au monde.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span data-fr="Quels types de yachts sont disponibles ?" data-en="What types of yachts are available?">Quels types de yachts sont disponibles ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" data-fr="Notre flotte de 10 yachts comprend des Superyachts (jusqu'à 62 m), des Yachts à Moteur, des Yachts à Voile et des Catamarans — pour tout type d'expérience en mer." data-en="Our fleet of 10 yachts includes Superyachts (up to 62m), Motor Yachts, Sailing Yachts and Catamarans — for every type of seafaring experience.">
+                Notre flotte de 10 yachts comprend des Superyachts (jusqu'à 62 m), des Yachts à Moteur, des Yachts à Voile et des Catamarans — pour tout type d'expérience en mer.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span data-fr="L'équipage est-il inclus dans la location ?" data-en="Is crew included in the charter?">L'équipage est-il inclus dans la location ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" data-fr="Oui, chaque location inclut un équipage professionnel hautement qualifié — capitaine, matelots et chef à bord selon le yacht choisi." data-en="Yes, every charter includes a highly trained professional crew — captain, deck hands and a chef on board depending on the yacht selected.">
+                Oui, chaque location inclut un équipage professionnel hautement qualifié — capitaine, matelots et chef à bord selon le yacht choisi.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span data-fr="Puis-je personnaliser mon expérience ?" data-en="Can I customize my experience?">Puis-je personnaliser mon expérience ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" data-fr="Oui, chaque charter est entièrement personnalisé — itinéraire, gastronomie, activités nautiques, décoration à bord. Notre équipe est à votre entière disposition." data-en="Yes, every charter is fully customized — itinerary, gastronomy, water sports, on-board décor. Our team is at your complete disposal.">
+                Oui, chaque charter est entièrement personnalisé — itinéraire, gastronomie, activités nautiques, décoration à bord. Notre équipe est à votre entière disposition.
+            </div>
+        </div>
+        <div class="faq-item">
+    <button class="faq-question">
+        <span data-fr="Quelles sont les conditions d’annulation ?" data-en="What is your cancellation policy?">
+            Quelles sont les conditions d’annulation ?
+        </span>
+        <span class="faq-icon">+</span>
+    </button>
+    <div class="faq-answer" 
+         data-fr="Les conditions d’annulation varient selon le délai avant le départ : plus de 90 jours (20 % du montant total), entre 60 et 90 jours (40 %), entre 30 et 59 jours (70 %) et moins de 30 jours (100 %). Toute annulation doit être notifiée par écrit. En cas d’annulation de notre part (hors force majeure), un remboursement intégral est effectué sous 14 jours ou une alternative équivalente peut être proposée. En cas de force majeure, un avoir valable 24 mois ou un report sera proposé."
+         data-en="Cancellation conditions vary depending on the time before departure: more than 90 days (20% of the total amount), between 60 and 90 days (40%), between 30 and 59 days (70%), and less than 30 days (100%). All cancellations must be submitted in writing. In case of cancellation by us (excluding force majeure), a full refund will be issued within 14 days or an equivalent alternative may be offered. In case of force majeure, a credit valid for 24 months or a rescheduling will be proposed.">
+        Les conditions d’annulation varient selon le délai avant le départ : plus de 90 jours (20 %), entre 60 et 90 jours (40 %), entre 30 et 59 jours (70 %) et moins de 30 jours (100 %). Toute annulation doit être notifiée par écrit. En cas d’annulation de notre part (hors force majeure), un remboursement intégral est effectué sous 14 jours ou une alternative équivalente peut être proposée. En cas de force majeure, un avoir valable 24 mois ou un report sera proposé.
+    </div>
+</div>
+
+        <div class="faq-item">
+            <button class="faq-question">
+                <span data-fr="Quels sont les modes de paiement acceptés ?" data-en="What payment methods are accepted?">Quels sont les modes de paiement acceptés ?</span>
+                <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" data-fr="Nous acceptons les virements bancaires, cartes de crédit et paiements sécurisés en ligne. Un acompte de 50 % est requis à la réservation." data-en="We accept bank transfers, credit cards and secure online payments. A 50% deposit is required at booking.">
+                Nous acceptons les virements bancaires, cartes de crédit et paiements sécurisés en ligne. Un acompte de 10 % est requis à la réservation.
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WhatsApp -->
+<a class="whatsapp-btn" href="https://wa.me/33753150620" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-label" data-fr="Nous écrire" data-en="Chat with us">Nous écrire</span>
+</a>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <span class="logo-crown">♛</span>
+                <span class="logo-name">King Yachts</span>
+            </div>
+            <p data-fr="Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige." data-en="Experience luxury at sea with our yacht charter services in Cannes, Monaco and the Caribbean. An exclusive fleet of 10 prestigious yachts.">
+                Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige.
+            </p>
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Navigation" data-en="Navigation">Navigation</h5>
+            <a href="#home"      data-fr="Accueil"      data-en="Home">Accueil</a>
+            <a href="#destinations" data-fr="Destinations" data-en="Destinations">Destinations</a>
+            <a href="#faq"       data-fr="FAQ"           data-en="FAQ">FAQ</a>
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Contact" data-en="Contact">Contact</h5>
+            <a href="tel:+33493999999">+33  7 53 15 06 20</a>
+            <a href="mailto:contact@kingyachts.com">contact@kingyachts.com</a>
+            
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Horaires" data-en="Hours">Horaires</h5>
+            <a href="#" data-fr="Lun – Ven : 9h – 19h" data-en="Mon – Fri: 9AM – 7PM">Lun – Ven : 9h – 19h</a>
+            <a href="#" data-fr="Sam/Dim : 10h – 20h"       data-en="Sat/Sun: 10AM – 8PM">Sam/Dim : 10h – 20h</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy;  © 2020 -  King Yachts · Luxury Charter</p>
+        <div style="display:flex;gap:1.5rem">
+            <a href="legal.html" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a>
+            <a href="legal.html" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+            <a href="legal.html" data-fr="CGV" data-en="Terms">CGV</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── LANGUAGE ──────────────────────────────────────────────────────────
+let currentLang = 'fr';
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        currentLang = this.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        applyLang(currentLang);
+    });
+});
+
+function applyLang(lang) {
+    document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+        const val = el.getAttribute(`data-${lang}`);
+        if (!val) return;
+        // Skip elements with child elements (icons etc.)
+        const hasChildEl = Array.from(el.childNodes).some(n => n.nodeType === 1 && n.tagName !== 'BR');
+        if (hasChildEl) return;
+        el.textContent = val;
+    });
+}
+
+// ── FAQ ───────────────────────────────────────────────────────────────
+document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+
+        // Close all
+        document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+
+        // Open clicked if it was closed
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+// Open first FAQ by default
+const firstFaq = document.querySelector('.faq-item');
+if (firstFaq) firstFaq.classList.add('open');
+
+// ── SMOOTH SCROLL ─────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href.length > 1) {
+            const target = document.querySelector(href);
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        }
+    });
+});
+</script>
+</body>
+</html>

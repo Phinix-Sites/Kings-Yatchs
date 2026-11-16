@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=9zJhVTbeEPxEWoia29EUAFaDjMxt86wiQPS6NiBLrQw6xtOh1ttKl2dsadegmGlOlkH4Bs1uawJpuIdqKEPpNdFe-QtXevCJiOCPseTIYOuDCmGIsF4v4G87atWUh1dYOUWbq9P-SZ2pZd97Rmb9vw" charset="UTF-8"></script><script type='text/javascript' nonce='ALX7ppdoa9ZFOLK85nOg8A==' src='https://srv508-files.hstgr.io/LjUKOT7WNnt8mzlg3GSOlWBieZRNBiXEUfvnEU4jr39_Md4J5Tqma09Suzo8JNKqOsQUzK5XepOlM0EpunQ0DNzTImNJesCHjYCwoQy4fMZ7CZQM3u8M-_BHAThMQXg1YNt8sev5oG87D3CmT9SlIZtt6NFBcQsdYohQE93bxnqHMoXYzHQzBcY52gsocXr3h2dpq4CLbevMiEBEZrAgVAPjxGJPcFn0WGalMrhHNmaZyvHVQKc5TuGuL0zHj9ME8iva6CQFu5WlE9-Ok2ce5GjlX594j64f3CS3C6NHOEJi2feU4EfFWV89pShWxWLell6iI7WdMdapWnSJAw3JobyUqBxY8w1388Q05-iTw-F3S7VYjpbSnU8NUqrFS63HVlofQ83XBcYlMI5r52_kUfmbAi8GEqmtrsRcaESsx4cZ8edj0N0zwaW0ttvEkwcUaGIeYQD4eCo3W8sCegbZKmZqDW4AcCJa93t05hMdSnpXbLCBEcGMsZiyiGTgREJSfI48EEoc8kXxKrSd35idoSaFHdxF'></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation — King Yachts · Luxury Charter</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+    <link rel="icon" href="favicon.ico">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --dark-bg: #0d0d0d;
+            --navy: #0a1628;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --accent: #1a56db;
+            --gold: #c9a84c;
+            --gold-light: #e8c97a;
+            --border: #e0e0e0;
+            --card-bg: #fff;
+            --light-bg: #f7f8fa;
+        }
+
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--text-dark);
+            background: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* ── Language Switcher ── */
+        .language-switcher {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 300;
+            display: flex;
+            gap: 4px;
+            background: rgba(255,255,255,0.95);
+            padding: 4px;
+            border-radius: 6px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            backdrop-filter: blur(8px);
+        }
+        .lang-btn {
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: all 0.25s;
+            color: var(--text-dark);
+            font-family: 'Jost', sans-serif;
+        }
+        .lang-btn.active { background: var(--navy); color: white; border-color: var(--navy); }
+        .lang-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+
+        /* ── Header ── */
+        header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 10px rgba(0,0,0,0.07);
+        }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo-crown { color: var(--gold); font-size: 1.4rem; }
+        .logo-text { font-family: 'Cormorant Garamond', serif; }
+        .logo-line1 { display: block; font-size: 1.4rem; font-weight: 600; line-height: 1; letter-spacing: 3px; text-transform: uppercase; }
+        .logo-line2 { display: block; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--gold); font-weight: 400; }
+        nav { display: flex; gap: 2.5rem; align-items: center; flex: 1; justify-content: center; }
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a:hover { color: var(--gold); }
+        nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.3s; }
+        nav a:hover::after { width: 100%; }
+
+        /* ── Hero ── */
+        .hero {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 50%, #0a2040 100%);
+        }
+        .hero-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(201,168,76,0.10) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(26,86,219,0.15) 0%, transparent 40%);
+        }
+        .hero-content { z-index: 10; text-align: center; }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+        .hero-sub {
+            font-size: 0.8rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-top: 0.5rem;
+            font-weight: 300;
+        }
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1rem;
+            font-size: 0.78rem;
+            letter-spacing: 1.5px;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+        .breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+        .breadcrumb a:hover { color: var(--gold); }
+        .breadcrumb span { color: var(--gold); }
+
+        /* ── Timer bar ── */
+        .timer-bar {
+            background: #fff8e1;
+            border-bottom: 2px solid var(--gold);
+            padding: 10px 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--navy);
+        }
+        .timer-bar i { color: var(--gold); }
+        #timerCount { font-weight: 700; color: #c0392b; font-size: 1rem; }
+
+        /* ── Main layout ── */
+        .page-container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        /* ── Sections ── */
+        .section-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .section-header {
+            background: var(--navy);
+            padding: 1.1rem 1.6rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-header h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.15rem;
+            color: white;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .section-header i { color: var(--gold); }
+        .section-body { padding: 1.8rem; }
+
+        /* ── Boat summary card ── */
+        .boat-card {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 2rem;
+        }
+        /* ── Photo Gallery ── */
+        .gallery-wrap { margin-top:1.8rem; padding-top:1.4rem; border-top:1px solid var(--border); }
+        .gallery-label { font-size:0.68rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text-light); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+        .gallery-label i { color:var(--gold); }
+        .gallery-count { background:var(--navy); color:white; font-size:0.62rem; padding:2px 8px; border-radius:20px; letter-spacing:1px; }
+        .gallery-main { position:relative; border-radius:10px; overflow:hidden; height:340px; background:var(--navy); margin-bottom:8px; }
+        .gallery-main img { width:100%; height:100%; object-fit:cover; display:none; }
+        .gallery-main img.active { display:block; }
+        .gallery-main .gal-counter { position:absolute; bottom:12px; right:14px; background:rgba(0,0,0,0.65); color:white; font-size:0.75rem; font-weight:600; padding:4px 11px; border-radius:20px; letter-spacing:1px; }
+        .gallery-nav { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); color:white; border:none; width:42px; height:42px; border-radius:50%; font-size:1rem; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; z-index:2; }
+        .gallery-nav:hover { background:rgba(201,168,76,0.85); }
+        .gallery-nav.prev { left:12px; }
+        .gallery-nav.next { right:12px; }
+        .gallery-thumbs { display:flex; gap:6px; overflow-x:auto; padding-bottom:4px; scrollbar-width:thin; }
+        .gallery-thumbs::-webkit-scrollbar { height:4px; }
+        .gallery-thumbs::-webkit-scrollbar-thumb { background:var(--border); border-radius:2px; }
+        .gallery-thumb { flex-shrink:0; width:70px; height:52px; border-radius:5px; overflow:hidden; cursor:pointer; border:2px solid transparent; transition:border-color 0.2s, opacity 0.2s; opacity:0.65; }
+        .gallery-thumb.active { border-color:var(--gold); opacity:1; }
+        .gallery-thumb:hover { opacity:1; }
+        .gallery-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+        .boat-img-wrap {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            height: 200px;
+            background: var(--navy);
+        }
+        .boat-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .boat-type-tag {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 3px;
+        }
+        .boat-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--navy);
+            line-height: 1.2;
+        }
+        .boat-model {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 4px;
+            margin-bottom: 1.2rem;
+        }
+        .boat-specs {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-bottom: 1.2rem;
+        }
+        .spec {
+            text-align: center;
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 10px 6px;
+        }
+        .spec i { color: var(--gold); font-size: 1.1rem; display: block; margin-bottom: 4px; }
+        .spec-num { font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+        .spec-lbl { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; color: var(--text-light); }
+        .boat-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .boat-tag {
+            background: #f0f4ff;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            border: 1px solid #c7d4f9;
+        }
+
+        /* ── Dates summary ── */
+        .dates-grid {
+            display: grid;
+            grid-template-columns: 1fr 40px 1fr;
+            gap: 0;
+            align-items: center;
+            margin-bottom: 1.4rem;
+        }
+        .date-box {
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+        }
+        .date-box-lbl {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+        .date-box-val {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+        .date-box-time {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            margin-top: 2px;
+        }
+        .date-arrow {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--gold);
+        }
+        .duration-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--navy);
+            color: white;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            margin-bottom: 1.4rem;
+        }
+        .duration-pill i { color: var(--gold); }
+
+        /* ── Form elements ── */
+        .form-group { margin-bottom: 1.3rem; }
+        .form-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-bottom: 6px;
+        }
+        .form-input, .form-select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 7px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            background: white;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(26,86,219,0.08);
+        }
+        .form-input:read-only { background: var(--light-bg); cursor: default; }
+        .form-input:disabled { background: var(--light-bg); color: var(--text-light); cursor: default; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+        .form-check input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--accent);
+            cursor: pointer;
+        }
+
+        /* ── Sidebar (now inline) ── */
+        .sidebar { position: static; }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            header { padding: 1rem; gap: 0; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .page-container { padding: 1.5rem 1rem 4rem; }
+            .boat-card { grid-template-columns: 1fr; }
+            .boat-img-wrap { height: 220px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .boat-specs { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        /* ── Price card ── */
+        .price-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+        }
+        .price-card-head {
+            background: var(--navy);
+            padding: 1.3rem 1.6rem;
+        }
+        .price-card-head p {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .price-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            font-weight: 600;
+            color: white;
+            line-height: 1;
+        }
+        .price-main span { font-size: 1.1rem; color: rgba(255,255,255,0.6); margin-left: 4px; }
+        .price-daily {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 4px;
+        }
+        .price-body { padding: 1.4rem 1.6rem; }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .price-row:last-child { border-bottom: none; }
+        .price-row .lbl { color: var(--text-light); }
+        .price-row .val { font-weight: 600; }
+        .price-row .val.green { color: #16a34a; }
+        .price-total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.6rem;
+            background: var(--light-bg);
+            border-top: 2px solid var(--border);
+        }
+        .price-total-lbl {
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-dark);
+        }
+        .price-total-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.9rem;
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* ── Pay button ── */
+        .pay-btn {
+            width: 100%;
+            background: var(--navy);
+            color: white;
+            border: none;
+            padding: 1.1rem;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background 0.25s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border-radius: 0 0 12px 12px;
+        }
+        .pay-btn:hover { background: var(--accent); }
+        .pay-btn i { color: var(--gold); }
+
+        .secure-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 10px 1.6rem;
+            font-size: 0.72rem;
+            color: var(--text-light);
+            background: var(--light-bg);
+            border-top: 1px solid var(--border);
+        }
+        .secure-row i { color: #16a34a; }
+
+        /* ── Trust badges ── */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 1.2rem;
+        }
+        .trust-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            background: var(--light-bg);
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 0.8rem;
+            color: var(--text-dark);
+        }
+        .trust-item i { color: var(--gold); margin-top: 2px; font-size: 0.9rem; flex-shrink: 0; }
+
+        /* ── Confirmation banner ── */
+        .confirm-banner {
+            background: #f0fdf4;
+            border: 1px solid #86efac;
+            border-radius: 10px;
+            padding: 1rem 1.4rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 1.8rem;
+            font-size: 0.88rem;
+            color: #166534;
+        }
+        .confirm-banner i { font-size: 1.1rem; margin-top: 1px; flex-shrink: 0; }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 2rem 1.5rem;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .footer-section h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        .footer-section a {
+            display: block;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.88rem;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover { color: var(--gold-light); }
+        .footer-section p { color: rgba(255,255,255,0.6); font-size: 0.88rem; line-height: 1.7; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.82rem;
+        }
+
+        /* ── WhatsApp ── */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 200;
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 1.6rem;
+            text-decoration: none;
+        }
+        .whatsapp-button:hover { transform: scale(1.1); }
+
+        /* ── Page loader ── */
+        #pageLoader {
+            position: fixed;
+            inset: 0;
+            background: rgba(10,22,40,0.97);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #pageLoader .loader-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: white;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        #pageLoader .loader-logo span { color: var(--gold); }
+        .spinner-ring {
+            width: 56px;
+            height: 56px;
+            border: 4px solid rgba(201,168,76,0.2);
+            border-top: 4px solid var(--gold);
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #pageLoader p {
+            color: rgba(255,255,255,0.55);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1200px) {
+            .page-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: static;
+                /* No desktop estreito e tablet: sidebar aparece ANTES do formulário */
+                order: -1;
+            }
+            .left-col {
+                order: 1;
+            }
+        }
+        @media (max-width: 768px) {
+            header { padding: 1rem; gap: 0; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.2rem; }
+            .page-container { padding: 1.5rem 1rem 4rem; }
+            .boat-card { grid-template-columns: 1fr; }
+            .boat-img-wrap { height: 220px; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-content { grid-template-columns: 1fr; }
+            .boat-specs { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<!-- Header -->
+<header>
+    <div class="logo">
+        <span class="logo-crown">♛</span>
+        <div class="logo-text">
+            <span class="logo-line1">King Yachts</span>
+            <span class="logo-line2">Luxury Charter</span>
+        </div>
+    </div>
+    <nav>
+        <a href="http://king-yachts.com">Accueil</a>
+        <a href="cannes.html">Cannes</a>
+        <a href="monaco.html">Monaco</a>
+        <a href="caribbean.html">Caraïbes</a>
+        <a href="#about">À Propos</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+    <div style="font-size:1rem;color:var(--gold);letter-spacing:1px;font-size:0.78rem;text-transform:uppercase;">
+        <i class="fas fa-lock" style="margin-right:5px;"></i>Réservation sécurisée
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-bg-pattern"></div>
+    <div class="hero-content">
+        <h1 data-fr="Réservation" data-en="Booking">Réservation</h1>
+        <p class="hero-sub" data-fr="Confirmez votre charter de luxe" data-en="Confirm your luxury charter">
+            Confirmez votre charter de luxe
+        </p>
+        <div class="breadcrumb">
+            <a href="cannes.html">Cannes</a>
+            <i class="fas fa-chevron-right" style="font-size:0.6rem;"></i>
+            <span>Réservation</span>
+        </div>
+    </div>
+</section>
+
+<!-- Timer bar -->
+<div class="timer-bar">
+    <i class="fas fa-hourglass-half"></i>
+    <span data-fr="Prix garanti pendant" data-en="Price guaranteed for">Prix garanti pendant</span>
+    <strong id="timerCount">10:00</strong>
+    <span data-fr="— Complétez votre réservation maintenant" data-en="— Complete your booking now">— Complétez votre réservation maintenant</span>
+</div>
+
+<!-- ── Comment ça marche — Ticker horizontal ── -->
+<div class="hiw-ticker-wrap">
+    <div class="hiw-ticker-label">
+        <i class="fas fa-info-circle"></i>
+        <span data-fr="COMMENT ÇA MARCHE" data-en="HOW IT WORKS">COMMENT ÇA MARCHE</span>
+    </div>
+    <div class="hiw-ticker-track-outer">
+        <div class="hiw-ticker-track" id="hiwTrack">
+            <!-- steps duplicated for seamless loop -->
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">01</span>
+                <i class="fas fa-ship hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Choisissez votre yacht, la période et le port de départ" data-en="Choose your yacht, period and departure port">Choisissez votre yacht, la période et le port de départ</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">02</span>
+                <i class="fas fa-file-signature hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Remplissez le formulaire et envoyez votre demande" data-en="Fill in the form and send your request">Remplissez le formulaire et envoyez votre demande</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num hiw-tick-num--gold">03</span>
+                <i class="fas fa-bolt hiw-tick-icon hiw-tick-icon--gold"></i>
+                <span class="hiw-tick-text" data-fr="En moins de 20 min : contrat, assurance &amp; lien de paiement par email" data-en="In under 20 min: contract, insurance &amp; payment link by email">En moins de 20 min : contrat, assurance &amp; lien de paiement par email</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">04</span>
+                <i class="fas fa-anchor hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Réglez l'acompte et rejoignez votre yacht au port — bon vent !" data-en="Pay the deposit and meet your yacht at the port — bon voyage!">Réglez l'acompte et rejoignez votre yacht au port — bon vent !</span>
+            </div>
+            <span class="hiw-tick-sep" style="padding-right:80px;">◆</span>
+            <!-- duplicate for seamless loop -->
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">01</span>
+                <i class="fas fa-ship hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Choisissez votre yacht, la période et le port de départ" data-en="Choose your yacht, period and departure port">Choisissez votre yacht, la période et le port de départ</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">02</span>
+                <i class="fas fa-file-signature hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Remplissez le formulaire et envoyez votre demande" data-en="Fill in the form and send your request">Remplissez le formulaire et envoyez votre demande</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num hiw-tick-num--gold">03</span>
+                <i class="fas fa-bolt hiw-tick-icon hiw-tick-icon--gold"></i>
+                <span class="hiw-tick-text" data-fr="En moins de 20 min : contrat, assurance &amp; lien de paiement par email" data-en="In under 20 min: contract, insurance &amp; payment link by email">En moins de 20 min : contrat, assurance &amp; lien de paiement par email</span>
+            </div>
+            <span class="hiw-tick-sep">◆</span>
+            <div class="hiw-tick-step">
+                <span class="hiw-tick-num">04</span>
+                <i class="fas fa-anchor hiw-tick-icon"></i>
+                <span class="hiw-tick-text" data-fr="Réglez l'acompte et rejoignez votre yacht au port — bon vent !" data-en="Pay the deposit and meet your yacht at the port — bon voyage!">Réglez l'acompte et rejoignez votre yacht au port — bon vent !</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* ── Ticker ── */
+.hiw-ticker-wrap {
+    display: flex;
+    align-items: stretch;
+    background: var(--navy);
+    border-bottom: 2px solid var(--gold);
+    overflow: hidden;
+    height: 48px;
+}
+.hiw-ticker-label {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0 20px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 2;
+}
+.hiw-ticker-label i { font-size: 0.85rem; }
+.hiw-ticker-track-outer {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.hiw-ticker-track-outer::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 40px;
+    background: linear-gradient(90deg, var(--navy), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+.hiw-ticker-track-outer::after {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 40px;
+    background: linear-gradient(270deg, var(--navy), transparent);
+    z-index: 1;
+    pointer-events: none;
+}
+.hiw-ticker-track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    white-space: nowrap;
+    animation: hiwScroll 38s linear infinite;
+    will-change: transform;
+}
+.hiw-ticker-track:hover { animation-play-state: paused; }
+@keyframes hiwScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+.hiw-tick-step {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 28px;
+}
+.hiw-tick-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.3);
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.hiw-tick-num--gold { color: var(--gold); }
+.hiw-tick-icon {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.5);
+}
+.hiw-tick-icon--gold { color: var(--gold); }
+.hiw-tick-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.3px;
+}
+.hiw-tick-sep {
+    color: var(--gold);
+    font-size: 0.5rem;
+    opacity: 0.5;
+    padding: 0 4px;
+}
+</style>
+
+<!-- Main content -->
+<div class="page-container">
+
+    <!-- LEFT COLUMN -->
+    <div class="left-col">
+
+        <!-- Confirmation banner -->
+        <div class="confirm-banner">
+            <i class="fas fa-check-circle"></i>
+            <div>
+                <strong data-fr="Envoyez votre demande et recevez-la en moins de 20 minutes." data-en="Instant booking confirmed">Envoyez votre demande et recevez-la en moins de 20 minutes.</strong>
+                <br>
+                <span data-fr="Vous recevrez un courriel quelques minutes après avoir soumis votre demande, contenant un lien de paiement sécurisé pour le service, le contrat et la facture.." data-en="You will receive an email a few minutes after submitting your request with a secure payment link for the service, contract, and invoice..">
+                    Vous recevrez un courriel quelques minutes après avoir soumis votre demande, contenant un lien de paiement sécurisé pour le service, le contrat et la facture.
+                </span>
+            </div>
+        </div>
+
+        <!-- Boat summary -->
+        <div class="section-card" style="margin-bottom:2rem;">
+            <div class="section-header">
+                <i class="fas fa-anchor"></i>
+                <h3 data-fr="Votre Yacht Sélectionné" data-en="Your Selected Yacht">Votre Yacht Sélectionné</h3>
+            </div>
+            <div class="section-body">
+                <div class="boat-card">
+                    <div class="boat-img-wrap">
+                        <img id="boatImg" src="" alt="Yacht">
+                        <span class="boat-type-tag" id="boatTypeBadge">Yacht</span>
+                    </div>
+                    <div>
+                        <div class="boat-name" id="boatName">—</div>
+                        <div class="boat-model" id="boatModel">—</div>
+                        <div class="boat-specs">
+                            <div class="spec">
+                                <i class="fas fa-ruler-horizontal"></i>
+                                <div class="spec-num" id="specLength">—</div>
+                                <div class="spec-lbl" data-fr="Longueur" data-en="Length">Longueur</div>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-users"></i>
+                                <div class="spec-num" id="specGuests">—</div>
+                                <div class="spec-lbl" data-fr="Hôtes" data-en="Guests">Hôtes</div>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-door-open"></i>
+                                <div class="spec-num" id="specCabins">—</div>
+                                <div class="spec-lbl" data-fr="Cabines" data-en="Cabins">Cabines</div>
+                            </div>
+                            <div class="spec">
+                                <i class="fas fa-anchor"></i>
+                                <div class="spec-num">⚓</div>
+                                <div class="spec-lbl" data-fr="Charter" data-en="Charter">Charter</div>
+                            </div>
+                        </div>
+                        <div class="boat-tags">
+                            <span class="boat-tag"><i class="fas fa-shield-alt" style="margin-right:4px;"></i>Assurance incluse</span>
+                            <span class="boat-tag"><i class="fas fa-user-tie" style="margin-right:4px;"></i>Équipage complet</span>
+                            <span class="boat-tag"><i class="fas fa-ban" style="margin-right:4px;"></i>Annulation flexible</span>
+                            <span class="boat-tag"><i class="fas fa-star" style="margin-right:4px;color:var(--gold);"></i>Service Premium</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── Photo Gallery ── -->
+                <div class="gallery-wrap" id="galleryWrap" style="display:none;">
+                    <div class="gallery-label">
+                        <i class="fas fa-images"></i>
+                        <span data-fr="GALERIE PHOTOS" data-en="PHOTO GALLERY">GALERIE PHOTOS</span>
+                        <span class="gallery-count" id="galleryCount">0 photos</span>
+                    </div>
+                    <div class="gallery-main" id="galleryMain">
+                        <button class="gallery-nav prev" id="galPrev">&#10094;</button>
+                        <button class="gallery-nav next" id="galNext">&#10095;</button>
+                        <span class="gal-counter" id="galCounter">1 / 1</span>
+                    </div>
+                    <div class="gallery-thumbs" id="galleryThumbs"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dates & Location -->
+        <div class="section-card" style="margin-bottom:2rem;">
+            <div class="section-header">
+                <i class="fas fa-calendar-alt"></i>
+                <h3 data-fr="Période &amp; Lieu de Charter" data-en="Charter Period &amp; Location">Période & Lieu de Charter</h3>
+            </div>
+            <div class="section-body">
+                <div class="duration-pill">
+                    <i class="fas fa-moon"></i>
+                    <span id="durationLabel">0 jour(s)</span>
+                </div>
+                <div class="dates-grid">
+                    <div class="date-box">
+                        <div class="date-box-lbl" data-fr="Embarquement" data-en="Embarkation">Embarquement</div>
+                        <div class="date-box-val" id="checkInDisplay">—</div>
+                        <div class="date-box-time" id="checkInTime"></div>
+                    </div>
+                    <div class="date-arrow">→</div>
+                    <div class="date-box">
+                        <div class="date-box-lbl" data-fr="Débarquement" data-en="Disembarkation">Débarquement</div>
+                        <div class="date-box-val" id="checkOutDisplay">—</div>
+                        <div class="date-box-time" id="checkOutTime"></div>
+                    </div>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                    <label class="form-label" data-fr="PORT D&#39;EMBARQUEMENT" data-en="EMBARKATION PORT">PORT D'EMBARQUEMENT</label>
+                    <input type="text" class="form-input" id="pickupDisplay" readonly="">
+                </div>
+            </div>
+        </div>
+
+        <!-- Reservation form -->
+        <div class="section-card">
+            <div class="section-header">
+                <i class="fas fa-user"></i>
+                <h3 data-fr="Informations du Chartiste" data-en="Charterer Information">Informations du Chartiste</h3>
+            </div>
+            <div class="section-body">
+                <form id="reservationForm">
+
+                    <!-- Hidden fields -->
+                    <input type="hidden" id="hBoatName">
+                    <input type="hidden" id="hBoatModel">
+                    <input type="hidden" id="hBoatType">
+                    <input type="hidden" id="hPrice">
+                    <input type="hidden" id="hDays">
+                    <input type="hidden" id="hCheckIn">
+                    <input type="hidden" id="hCheckOut">
+                    <input type="hidden" id="hPickup">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" data-fr="PRÉNOM" data-en="FIRST NAME">PRÉNOM</label>
+                            <input type="text" name="prenom" class="form-input" required="" placeholder="Jean">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" data-fr="NOM DE FAMILLE" data-en="LAST NAME">NOM DE FAMILLE</label>
+                            <input type="text" name="nom" class="form-input" required="" placeholder="Dupont">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-fr="ADRESSE EMAIL" data-en="EMAIL ADDRESS">ADRESSE EMAIL</label>
+                        <input type="email" name="email" class="form-input" required="" placeholder="jean.dupont@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-fr="TÉLÉPHONE / WHATSAPP" data-en="PHONE / WHATSAPP">TÉLÉPHONE / WHATSAPP</label>
+                        <input type="tel" name="telephone" class="form-input" required="" placeholder="+33 6 00 00 00 00">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-fr="NATIONALITÉ" data-en="NATIONALITY">NATIONALITÉ</label>
+                        <input type="text" name="nationalite" class="form-input" placeholder="Française">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" data-fr="DEMANDES SPÉCIALES (OPTIONNEL)" data-en="SPECIAL REQUESTS (OPTIONAL)">DEMANDES SPÉCIALES (OPTIONNEL)</label>
+                        <textarea name="demandes" class="form-input" rows="3" placeholder="Régimes alimentaires, occasions spéciales, destinations préférées..." style="resize:vertical;"></textarea>
+                    </div>
+
+                    <div style="border-top:1px solid var(--border);padding-top:1.2rem;margin-top:0.5rem;">
+                        <p style="font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-light);margin-bottom:1rem;" data-fr="SERVICES OPTIONNELS" data-en="OPTIONAL SERVICES">SERVICES OPTIONNELS</p>
+                        <label class="form-check">
+                            <input type="checkbox" name="transfert">
+                            <span data-fr="Transfert aéroport / port inclus" data-en="Airport / port transfer included">Transfert aéroport / port inclus</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="checkbox" name="provisioning">
+                            <span data-fr="Provisionnement du yacht (boissons, nourriture)" data-en="Yacht provisioning (drinks, food)">Provisionnement du yacht (boissons, nourriture)</span>
+                        </label>
+                        <label class="form-check">
+                            <input type="checkbox" name="photographer">
+                            <span data-fr="Photographe professionnel à bord" data-en="Professional photographer on board">Photographe professionnel à bord</span>
+                        </label>
+                    </div>
+
+                    <div style="background:#fefce8;border:1px solid #fde68a;border-radius:8px;padding:1rem;margin-top:1.2rem;font-size:0.82rem;color:#92400e;">
+                        <i class="fas fa-info-circle" style="margin-right:6px;"></i>
+                        <span data-fr="En confirmant cette réservation, vous acceptez nos Conditions Générales de Vente et notre Politique d&#39;Annulation. Un acompte de 30% est requis à la réservation." data-en="By confirming this booking, you agree to our Terms &amp; Conditions and Cancellation Policy. A 30% deposit is required at booking.">
+                            En confirmant cette réservation, vous acceptez nos Conditions Générales de Vente et notre Politique d'Annulation. Un acompte de 30% est requis à la réservation.
+                        </span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+
+        <!-- Price & Summary — abaixo da galeria -->
+        <div class="sidebar">
+
+            <!-- Price card -->
+            <div class="price-card" style="margin-bottom:1.2rem;">
+                <div class="price-card-head">
+                    <p data-fr="TOTAL DE VOTRE CHARTER" data-en="YOUR CHARTER TOTAL">TOTAL DE VOTRE CHARTER</p>
+                    <div class="price-main" id="sidePriceMain">— <span>€</span></div>
+                    <div class="price-daily" id="sidePriceDaily"></div>
+                </div>
+                <div class="price-body">
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Yacht sélectionné" data-en="Selected yacht">Yacht sélectionné</span>
+                        <span class="val" id="sideBoatName" style="font-size:0.82rem;text-align:right;max-width:160px;">—</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Durée" data-en="Duration">Durée</span>
+                        <span class="val" id="sideDuration">—</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Port de départ" data-en="Departure port">Port de départ</span>
+                        <span class="val" id="sidePickup" style="font-size:0.82rem;text-align:right;max-width:160px;">—</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Assurance charter" data-en="Charter insurance">Assurance charter</span>
+                        <span class="val green">Incluse</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Équipage" data-en="Crew">Équipage</span>
+                        <span class="val green">Inclus</span>
+                    </div>
+                    <div class="price-row">
+                        <span class="lbl" data-fr="Carburant" data-en="Fuel">Carburant</span>
+                        <span class="val" style="font-size:0.8rem;color:var(--text-light);">Non inclus</span>
+                    </div>
+                </div>
+                <div class="price-total-row">
+                    <span class="price-total-lbl" data-fr="Total" data-en="Total">Total</span>
+                    <span class="price-total-val" id="sideTotal">— €</span>
+                </div>
+                <div style="padding:1rem 1.6rem;background:var(--light-bg);border-top:1px solid var(--border);">
+                    <p style="font-size:0.72rem;color:var(--text-light);text-align:center;margin-bottom:0.8rem;" data-fr="Acompte requis à la réservation (30%)" data-en="Deposit required at booking (30%)">
+                        Acompte requis à la réservation (30%)
+                    </p>
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-size:0.8rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--navy);" data-fr="Acompte aujourd&#39;hui" data-en="Deposit today">Acompte aujourd'hui</span>
+                        <span style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--accent);" id="sideDeposit">— €</span>
+                    </div>
+                </div>
+                <button class="pay-btn" id="payButton" type="button">
+                    <i class="fas fa-paper-plane"></i>
+                    <span data-fr="Envoyer ma demande" data-en="Send my request">Envoyer ma demande</span>
+                </button>
+                <div class="secure-row">
+                    <i class="fas fa-bolt" style="color:var(--gold);"></i>
+                    <span data-fr="Notre équipe vous contactera en moins de 20 min" data-en="Our team will contact you in under 20 min">Notre équipe vous contactera en moins de 20 min</span>
+                </div>
+            </div>
+
+        </div><!-- /sidebar inline -->
+
+    </div><!-- /left-col -->
+
+</div><!-- /page-container -->
+
+<!-- WhatsApp -->
+<a href="https://wa.me/33753150620" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>King Yachts</h4>
+            <p>Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Navigation</h4>
+            <a href="#home">Accueil</a>
+            <a href="cannes.html">Cannes</a>
+            <a href="monaco.html">Monaco</a>
+            <a href="caribbean.html">Caraïbes</a>
+        </div>
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="tel:+33753150620">+33 7 53 15 06 20</a>
+            <a href="/cdn-cgi/l/email-protection#42212d2c3623213602292b2c256f3b23212a36316c212d2f"><span class="__cf_email__" data-cfemail="ef8c80819b8e8c9baf84868188c2968e8c879b9cc18c8082">[email&#160;protected]</span></a>
+            <a href="#">Port Pierre Canto, Cannes, France</a>
+        </div>
+        <div class="footer-section">
+            <h4>Horaires</h4>
+            <a href="#">Lun – Ven : 9h – 19h</a>
+            <a href="#">Sam/Dim : 10h – 20h</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Operated by ALTRIVON GROUP LTD — King Yachts · Luxury Charter</p>
+    </div>
+</footer>
+
+<!-- Page loader -->
+<div id="pageLoader">
+    <div class="loader-logo"><span>♛</span> King Yachts</div>
+    <div class="spinner-ring"></div>
+    <p>Redirection vers le paiement sécurisé…</p>
+</div>
+
+<!-- ═══════════════════════════════ SCRIPTS ═══════════════════════════════ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false">
+/* ── King Yachts · reserva.html · URL param reader ── */
+function kyInitReserva() {
+
+    // ── 1. Parse URL params ──────────────────────────────────────────
+    const params = new URLSearchParams(window.location.search);
+
+    const pCar      = params.get('car')              ? decodeURIComponent(params.get('car'))              : '';
+    const pModel    = params.get('boatModel')         ? decodeURIComponent(params.get('boatModel'))         : '';
+    const pType     = params.get('boatType')          ? decodeURIComponent(params.get('boatType'))          : '';
+    const pPrice    = parseFloat(params.get('price')     || '0');
+    const pWeek     = parseFloat(params.get('weekPrice') || '0');
+    const pDays     = parseInt(params.get('days')        || '0');
+    const pGuests   = params.get('guests')   ? decodeURIComponent(params.get('guests'))   : '';
+    const pCabins   = params.get('cabins')   ? decodeURIComponent(params.get('cabins'))   : '';
+    const pLength   = params.get('length')   ? decodeURIComponent(params.get('length'))   : '';
+    const pCheckIn  = params.get('checkIn')  ? decodeURIComponent(params.get('checkIn'))  : '';
+    const pCheckOut = params.get('checkOut') ? decodeURIComponent(params.get('checkOut')) : '';
+    const pPickup   = params.get('pickupLocation') ? decodeURIComponent(params.get('pickupLocation')) : '';
+    const pImg      = params.get('carImage') ? decodeURIComponent(params.get('carImage')) : '';
+
+    // ── helper: safe getElementById set — nunca ignora valores ─────
+    function setText(id, val) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = (val !== undefined && val !== null && val !== '') ? String(val) : '—';
+    }
+    function setVal(id, val) {
+        var el = document.getElementById(id);
+        if (el) el.value = (val !== undefined && val !== null) ? String(val) : '';
+    }
+    function setHtml(id, html) {
+        var el = document.getElementById(id);
+        if (el) el.innerHTML = html;
+    }
+
+    // ── 2. Fill hidden fields ────────────────────────────────────────
+    setVal('hBoatName',  pCar);
+    setVal('hBoatModel', pModel);
+    setVal('hBoatType',  pType);
+    setVal('hPrice',     pPrice);
+    setVal('hDays',      pDays);
+    setVal('hCheckIn',   pCheckIn);
+    setVal('hCheckOut',  pCheckOut);
+    setVal('hPickup',    pPickup);
+
+    // ── 3. Boat card ─────────────────────────────────────────────────
+    if (pImg) {
+        var imgEl = document.getElementById('boatImg');
+        if (imgEl) { imgEl.src = pImg; imgEl.onerror = function(){ imgEl.style.display='none'; }; }
+    }
+    setText('boatName',      pCar   || '—');
+    setText('boatModel',     pModel || '—');
+    setText('boatTypeBadge', pType  || 'Yacht');
+    setText('specLength',    pLength ? pLength + ' m' : '—');
+    setText('specGuests',    pGuests || '—');
+    setText('specCabins',    pCabins || '—');
+
+    // ── 4. Dates & Duration ──────────────────────────────────────────
+    function fmtDate(str) {
+        if (!str) return '—';
+        var d = new Date(str);
+        if (isNaN(d)) return str;
+        return d.toLocaleDateString('fr-FR', { weekday:'short', day:'2-digit', month:'short', year:'numeric' });
+    }
+    function fmtTime(str) {
+        if (!str) return '';
+        var t = str.split('T')[1];
+        return t ? t.slice(0,5) : '';
+    }
+
+    setText('checkInDisplay',  fmtDate(pCheckIn));
+    setText('checkOutDisplay', fmtDate(pCheckOut));
+    setText('checkInTime',  fmtTime(pCheckIn)  ? '⏱ ' + fmtTime(pCheckIn)  : '');
+    setText('checkOutTime', fmtTime(pCheckOut) ? '⏱ ' + fmtTime(pCheckOut) : '');
+
+    var daysLabel = pDays > 0
+        ? pDays + ' jour' + (pDays > 1 ? 's' : '') + ' de charter'
+        : 'Durée non définie';
+    setText('durationLabel', daysLabel);
+
+    if (pPickup) {
+        var elPickup = document.getElementById('pickupDisplay');
+        if (elPickup) elPickup.value = pPickup;
+    }
+
+    // ── 5. Price display ─────────────────────────────────────────────
+    function fmtEur(n) {
+        if (!n || isNaN(n) || n === 0) return '— €';
+        return n.toLocaleString('fr-FR', { style:'currency', currency:'EUR', maximumFractionDigits:0 });
+    }
+
+    var deposit   = pPrice * 0.30;
+    var dailyRate = pDays > 0 ? pPrice / pDays : (pWeek > 0 ? pWeek / 7 : 0);
+
+    // Preço principal no cabeçalho do sidebar
+    var elPriceMain = document.getElementById('sidePriceMain');
+    if (elPriceMain) {
+        if (pPrice > 0) {
+            var priceStr = pPrice.toLocaleString('fr-FR', { maximumFractionDigits:0 });
+            elPriceMain.innerHTML = priceStr + ' <span>€</span>';
+        } else {
+            elPriceMain.innerHTML = '— <span>€</span>';
+        }
+    }
+
+    var elDaily = document.getElementById('sidePriceDaily');
+    if (elDaily) elDaily.textContent = dailyRate > 0 ? fmtEur(dailyRate) + ' / jour' : '';
+
+    setText('sideBoatName',  pCar    || '—');
+    setText('sideDuration',  pDays > 0 ? pDays + ' j.' : '—');
+    setText('sidePickup',    pPickup || '—');
+    setText('sideTotal',     pPrice > 0 ? fmtEur(pPrice)  : '— €');
+    setText('sideDeposit',   pPrice > 0 ? fmtEur(deposit) : '— €');
+
+    // ── 6. Photo Gallery from sessionStorage ─────────────────────────
+    (function buildGallery() {
+        var stored = null;
+        try { stored = JSON.parse(sessionStorage.getItem('ky_booking') || 'null'); } catch(e) {}
+
+        var images = (stored && Array.isArray(stored.allImages) && stored.allImages.length)
+            ? stored.allImages
+            : (pImg ? [pImg] : []);
+
+        if (!images.length) return;
+
+        var wrap     = document.getElementById('galleryWrap');
+        var main     = document.getElementById('galleryMain');
+        var thumbsC  = document.getElementById('galleryThumbs');
+        var counter  = document.getElementById('galCounter');
+        var countLbl = document.getElementById('galleryCount');
+        var prevBtn  = document.getElementById('galPrev');
+        var nextBtn  = document.getElementById('galNext');
+
+        if (!wrap || !main) return;
+
+        wrap.style.display = 'block';
+        if (countLbl) countLbl.textContent = images.length + ' photo' + (images.length > 1 ? 's' : '');
+
+        var current = 0;
+        var mainImgs = [];
+
+        images.forEach(function(src, i) {
+            var img = document.createElement('img');
+            img.src = src;
+            img.alt = pCar + ' photo ' + (i + 1);
+            if (i === 0) img.classList.add('active');
+            /* insert before the nav buttons */
+            main.insertBefore(img, prevBtn || main.firstChild);
+            mainImgs.push(img);
+
+            if (thumbsC) {
+                var thumb = document.createElement('div');
+                thumb.className = 'gallery-thumb' + (i === 0 ? ' active' : '');
+                var tImg = document.createElement('img');
+                tImg.src = src; tImg.alt = '';
+                thumb.appendChild(tImg);
+                thumb.addEventListener('click', (function(idx){ return function(){ goTo(idx); }; })(i));
+                thumbsC.appendChild(thumb);
+            }
+        });
+
+        var thumbEls = thumbsC ? thumbsC.querySelectorAll('.gallery-thumb') : [];
+        if (counter) counter.textContent = '1 / ' + images.length;
+
+        function goTo(n) {
+            mainImgs[current].classList.remove('active');
+            if (thumbEls[current]) thumbEls[current].classList.remove('active');
+            current = (n + images.length) % images.length;
+            mainImgs[current].classList.add('active');
+            if (thumbEls[current]) { thumbEls[current].classList.add('active'); thumbEls[current].scrollIntoView({ behavior:'smooth', inline:'nearest', block:'nearest' }); }
+            if (counter) counter.textContent = (current + 1) + ' / ' + images.length;
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', function(){ goTo(current - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function(){ goTo(current + 1); });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft')  goTo(current - 1);
+            if (e.key === 'ArrowRight') goTo(current + 1);
+        });
+    })();
+
+    // ── 7. Timer ─────────────────────────────────────────────────────
+    var STORAGE_KEY = 'kyTimerEnd';
+    var endTime = parseInt(localStorage.getItem(STORAGE_KEY) || '0');
+    if (!endTime || endTime < Date.now()) {
+        endTime = Date.now() + 10 * 60 * 1000;
+        localStorage.setItem(STORAGE_KEY, endTime);
+    }
+
+    var timerEl = document.getElementById('timerCount');
+    function tick() {
+        var diff = endTime - Date.now();
+        if (diff <= 0) {
+            if (timerEl) timerEl.textContent = '00:00';
+            localStorage.removeItem(STORAGE_KEY);
+            return;
+        }
+        var m = Math.floor(diff / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        if (timerEl) timerEl.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+        setTimeout(tick, 1000);
+    }
+    tick();
+
+    // ── 8. Language switcher ─────────────────────────────────────────
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+        btn.addEventListener('click', function () {
+            var lang = this.dataset.lang;
+            document.querySelectorAll('.lang-btn').forEach(function(b){ b.classList.remove('active'); });
+            this.classList.add('active');
+            document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
+                var val = el.getAttribute('data-' + lang);
+                if (!val) return;
+                if (el.tagName === 'OPTION') { el.textContent = val; return; }
+                if (el.childNodes.length === 1 && el.childNodes[0].nodeType === 3) {
+                    el.childNodes[0].textContent = val;
+                } else if (!el.querySelector('i') && !el.querySelector('img')) {
+                    el.textContent = val;
+                }
+            });
+        });
+    });
+
+    // ── 9. Envoi via reserva-patch.js ────────────────────────────────
+    // Le bouton #payButton est géré par reserva-patch.js (FormSubmit).
+    // Aucun code Stripe ou PHP ici.
+}
+
+/* ── Run ── */
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', kyInitReserva);
+} else {
+    kyInitReserva();
+}
+</script>
+<script src="reserva-patch.js"></script>
+</body>
+</body>
+</html>

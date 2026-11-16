@@ -1,0 +1,1203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentions Légales · CGV · Confidentialité — King Yachts</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico">
+
+    <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+        --navy:   #0a1628;
+        --navy2:  #0f1f2e;
+        --gold:   #c9a84c;
+        --gold2:  #e8c97a;
+        --white:  #ffffff;
+        --off:    #f7f8fa;
+        --text:   #1a1a1a;
+        --muted:  #666;
+        --border: #e0e0e0;
+        --accent: #1a56db;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        font-family: 'Jost', sans-serif;
+        color: var(--text);
+        background: #fff;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    /* ─── LANGUAGE SWITCHER ─────────────────────────────── */
+    .lang-switcher {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        z-index: 400;
+        display: flex;
+        gap: 4px;
+        background: rgba(255,255,255,0.95);
+        padding: 4px;
+        border-radius: 6px;
+        box-shadow: 0 2px 14px rgba(0,0,0,0.14);
+        backdrop-filter: blur(10px);
+    }
+    .lang-btn {
+        padding: 5px 13px;
+        border: 1px solid var(--border);
+        background: transparent;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 0.78rem;
+        letter-spacing: 1px;
+        transition: all .22s;
+        color: var(--text);
+        font-family: 'Jost', sans-serif;
+    }
+    .lang-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .lang-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+
+    /* ─── HEADER ────────────────────────────────────────── */
+    header {
+        background: rgba(255,255,255,0.97);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 300;
+        box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+        backdrop-filter: blur(12px);
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: inherit;
+    }
+    .logo-crown { color: var(--gold); font-size: 1.5rem; line-height: 1; }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.45rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        line-height: 1;
+    }
+    .logo-sub {
+        font-size: 0.6rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        font-weight: 400;
+        margin-top: 2px;
+    }
+
+    nav {
+        display: flex;
+        gap: 2.5rem;
+        align-items: center;
+        flex: 1;
+        justify-content: center;
+    }
+    nav a {
+        color: var(--text);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        transition: color .25s;
+        position: relative;
+    }
+    nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -4px; left: 0;
+        width: 0; height: 1px;
+        background: var(--gold);
+        transition: width .3s;
+    }
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after { width: 100%; }
+    nav a.active-link { color: var(--gold); }
+    nav a.active-link::after { width: 100%; }
+
+    .nav-cta {
+        padding: 8px 22px;
+        background: var(--navy);
+        color: #fff !important;
+        border-radius: 4px;
+        letter-spacing: 1px;
+        transition: background .25s !important;
+    }
+    .nav-cta:hover { background: var(--accent) !important; color: #fff !important; }
+    .nav-cta::after { display: none !important; }
+
+    .header-search {
+        cursor: pointer;
+        color: var(--text);
+        font-size: 1.1rem;
+        transition: color .25s;
+    }
+    .header-search:hover { color: var(--gold); }
+
+    /* ─── PAGE HERO ─────────────────────────────────────── */
+    .page-hero {
+        background: var(--navy);
+        padding: 5rem 2.5rem 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+    .page-hero::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse 70% 80% at 15% 120%, rgba(201,168,76,0.12) 0%, transparent 65%);
+    }
+    .page-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        opacity: 0.4;
+    }
+    .page-hero-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    .page-hero-eyebrow {
+        font-size: 0.72rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: block;
+    }
+    .page-hero h1 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(2.2rem, 5vw, 3.5rem);
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.15;
+        letter-spacing: 1px;
+    }
+
+    /* ─── TAB BAR ───────────────────────────────────────── */
+    .tabs-bar {
+        background: #fff;
+        border-bottom: 1px solid var(--border);
+        position: sticky;
+        top: 73px;
+        z-index: 200;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .tabs-inner {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 2.5rem;
+        display: flex;
+        gap: 0;
+        overflow-x: auto;
+    }
+    .tab-btn {
+        font-family: 'Jost', sans-serif;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding: 1.2rem 2rem;
+        cursor: pointer;
+        transition: all .25s;
+        white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+    }
+
+    /* ─── PAGE BODY ─────────────────────────────────────── */
+    .page-body {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 5rem 2.5rem 8rem;
+    }
+
+    /* ─── PANELS ────────────────────────────────────────── */
+    .panel { display: none; }
+    .panel.active { display: block; }
+
+    /* ─── UPDATE BADGE ──────────────────────────────────── */
+    .update-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: var(--off);
+        border: 1px solid var(--border);
+        padding: 6px 16px;
+        margin-bottom: 3rem;
+        border-left: 3px solid var(--gold);
+    }
+
+    /* ─── SECTION TAG ───────────────────────────────────── */
+    .section-tag {
+        font-size: 0.72rem;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: block;
+    }
+
+    .section-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+        font-weight: 400;
+        color: var(--text);
+        margin-bottom: 3rem;
+        line-height: 1.2;
+    }
+
+    /* ─── LEGAL BLOCKS ──────────────────────────────────── */
+    .legal-block {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border);
+    }
+    .legal-block:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .legal-block h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 1.2rem;
+        letter-spacing: 0.5px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .legal-block h2::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
+        background: var(--gold);
+        flex-shrink: 0;
+    }
+
+    .legal-block h3 {
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text);
+        margin: 1.5rem 0 0.8rem;
+    }
+
+    .legal-block p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 1rem;
+    }
+    .legal-block p:last-child { margin-bottom: 0; }
+
+    .legal-block ul, .legal-block ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .legal-block li {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.85;
+        margin-bottom: 0.4rem;
+    }
+    .legal-block li::marker { color: var(--gold); }
+
+    .legal-block a {
+        color: var(--navy);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: color .2s;
+    }
+    .legal-block a:hover { color: var(--gold); }
+
+    /* ─── INFO BOX ──────────────────────────────────────── */
+    .info-box {
+        background: var(--off);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--gold);
+        padding: 1.2rem 1.5rem;
+        margin: 1.2rem 0;
+        font-size: 0.875rem;
+        color: var(--muted);
+        line-height: 1.8;
+    }
+    .info-box strong { color: var(--navy); font-weight: 600; }
+
+    /* ─── TABLE ─────────────────────────────────────────── */
+    .legal-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 1.2rem 0;
+        font-size: 0.875rem;
+    }
+    .legal-table th {
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--navy);
+        padding: 0.9rem 1rem;
+        text-align: left;
+        border-bottom: 2px solid var(--gold);
+        background: var(--off);
+    }
+    .legal-table td {
+        padding: 0.85rem 1rem;
+        color: var(--muted);
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        line-height: 1.7;
+    }
+    .legal-table tr:last-child td { border-bottom: none; }
+    .legal-table tr:hover td { background: var(--off); }
+
+    /* ─── CONTACT CARD ──────────────────────────────────── */
+    .contact-card {
+        background: var(--off);
+        border: 1px solid var(--border);
+        padding: 2rem 2.2rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1.2rem;
+    }
+    .contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+    .contact-label {
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+    }
+    .contact-value {
+        font-size: 0.9rem;
+        color: var(--text);
+    }
+    .contact-value a {
+        color: var(--text);
+        text-decoration: none;
+        transition: color .2s;
+    }
+    .contact-value a:hover { color: var(--gold); }
+
+    /* ─── WHATSAPP ──────────────────────────────────────── */
+    .whatsapp-btn {
+        position: fixed;
+        bottom: 2rem;
+        left: 2rem;
+        width: 58px;
+        height: 58px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 200;
+        box-shadow: 0 4px 16px rgba(37,211,102,0.4);
+        transition: transform .3s, box-shadow .3s;
+        text-decoration: none;
+    }
+    .whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,0.55); }
+    .whatsapp-btn i { color: #fff; font-size: 1.7rem; }
+    .whatsapp-label {
+        position: absolute;
+        left: 70px;
+        background: #fff;
+        padding: 6px 14px;
+        border-radius: 4px;
+        white-space: nowrap;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: var(--text);
+        display: none;
+        pointer-events: none;
+    }
+    .whatsapp-btn:hover .whatsapp-label { display: block; }
+
+    /* ─── FOOTER ────────────────────────────────────────── */
+    footer {
+        background: var(--navy);
+        color: #fff;
+        padding: 4rem 2.5rem 1.5rem;
+    }
+    .footer-top {
+        max-width: 1300px;
+        margin: 0 auto 3rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-brand .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 1.2rem;
+    }
+    .footer-brand .logo-crown { color: var(--gold); font-size: 1.3rem; }
+    .footer-brand .logo-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; }
+    .footer-brand p { font-size: 0.875rem; color: rgba(255,255,255,0.55); line-height: 1.8; }
+    .footer-col h5 {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.05rem;
+        color: var(--gold);
+        margin-bottom: 1.2rem;
+        letter-spacing: 1px;
+    }
+    .footer-col a {
+        display: block;
+        color: rgba(255,255,255,0.55);
+        text-decoration: none;
+        font-size: 0.875rem;
+        margin-bottom: 0.55rem;
+        transition: color .25s;
+    }
+    .footer-col a:hover { color: var(--gold2); }
+    .footer-bottom {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(255,255,255,0.35);
+        font-size: 0.8rem;
+    }
+    .footer-bottom a { color: rgba(255,255,255,0.35); text-decoration: none; transition: color .25s; }
+    .footer-bottom a:hover { color: rgba(255,255,255,0.7); }
+    .footer-bottom a.current { color: rgba(255,255,255,0.7); }
+
+    /* ─── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 1100px) {
+        .footer-top { grid-template-columns: 1fr 1fr; }
+        .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    @media (max-width: 768px) {
+        .contact-card { grid-template-columns: 1fr; }
+        .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 640px) {
+        header { flex-direction: column; gap: 1rem; padding: 1rem 1.5rem; }
+        nav { flex-wrap: wrap; gap: 1rem; justify-content: center; }
+        .nav-cta { display: none; }
+        .page-hero { padding: 4rem 1.5rem 3rem; }
+        .page-body { padding: 3rem 1.5rem 5rem; }
+        .tabs-inner { padding: 0 1rem; }
+        .tab-btn { padding: 1rem 1.2rem; font-size: 0.72rem; }
+        .footer-top { grid-template-columns: 1fr; }
+        .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+    </style>
+</head>
+<body>
+
+<!-- Language Switcher -->
+<div class="lang-switcher">
+    <button class="lang-btn active" data-lang="fr">FR</button>
+    <button class="lang-btn" data-lang="en">EN</button>
+</div>
+
+<!-- Header -->
+<header>
+    <a href="http://king-yachts.com" class="logo">
+        <span class="logo-crown">♛</span>
+        <div class="logo-text">
+            <span class="logo-name">King Yachts</span>
+            <span class="logo-sub">Luxury Charter</span>
+        </div>
+    </a>
+    <nav>
+        <a href="http://king-yachts.com" data-fr="Accueil" data-en="Home">Accueil</a>
+        <a href="cannes.html" data-fr="Cannes" data-en="Cannes">Cannes</a>
+        <a href="monaco.html" data-fr="Monaco" data-en="Monaco">Monaco</a>
+        <a href="caribbean.html" data-fr="Caraïbes" data-en="Caribbean">Caraïbes</a>
+        <a href="legal.html" class="active-link" data-fr="Mentions Légales" data-en="Legal">Mentions Légales</a>
+        <a href="http://king-yachts.com/#faq" data-fr="FAQ" data-en="FAQ">FAQ</a>
+    </nav>
+    <div class="header-search" onclick="window.location.href='http://king-yachts.com/#destinations'">
+        <i class="fas fa-search"></i>
+    </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+    <div class="page-hero-inner">
+        <span class="page-hero-eyebrow" data-fr="King Yachts · Documents Contractuels" data-en="King Yachts · Legal Documents">King Yachts · Documents Contractuels</span>
+        <h1 data-fr="Informations Légales" data-en="Legal Information">Informations Légales</h1>
+    </div>
+</section>
+
+<!-- Tab Bar -->
+<div class="tabs-bar">
+    <div class="tabs-inner">
+        <button class="tab-btn active" onclick="showTab('mentions')" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</button>
+        <button class="tab-btn" onclick="showTab('cgv')" data-fr="CGV" data-en="Terms of Sale">CGV</button>
+        <button class="tab-btn" onclick="showTab('confidentialite')" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</button>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="page-body">
+
+    <!-- ─── MENTIONS LÉGALES ─── -->
+    <div id="mentions" class="panel active">
+        <div class="update-badge" data-fr="Dernière mise à jour : 1er janvier 2026" data-en="Last updated: January 1, 2026">Dernière mise à jour : 1er janvier 2026</div>
+        <span class="section-tag" data-fr="Loi n° 2004-575 du 21 juin 2004 (LCEN)" data-en="French Digital Economy Act (LCEN)">Loi n° 2004-575 du 21 juin 2004 (LCEN)</span>
+        <h2 class="section-title" data-fr="Mentions Légales" data-en="Legal Notice">Mentions Légales</h2>
+
+        <div class="legal-block">
+            <h2 data-fr="1. Éditeur du site" data-en="1. Website Publisher">1. Éditeur du site</h2>
+            <p data-fr="Conformément aux dispositions de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique (LCEN), le présent site internet king-yachts.com est édité par :" data-en="In accordance with article 6 of Act No. 2004-575 of 21 June 2004 on Confidence in the Digital Economy (LCEN), the website king-yachts.com is published by:">
+                Conformément aux dispositions de l'article 6 de la loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'Économie Numérique (LCEN), le présent site internet <strong>king-yachts.com</strong> est édité par :
+            </p>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Raison sociale" data-en="Company name">Raison sociale</span>
+                    <span class="contact-value">King Yachts Ltd</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Forme juridique" data-en="Legal form">Forme juridique</span>
+                    <span class="contact-value" data-fr="Société de capitaux (Ltd) de droit anglais" data-en="Limited company under English law">Société de capitaux (Ltd) de droit anglais</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Siège social" data-en="Registered office">Siège social</span>
+                    <span class="contact-value">England and Wales, Royaume-Uni</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Numéro d'enregistrement" data-en="Registration number">Numéro d'enregistrement</span>
+                    <span class="contact-value">Companies House — Angleterre &amp; Pays de Galles</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Marque commerciale" data-en="Trade name">Marque commerciale</span>
+                    <span class="contact-value">King Yachts — Luxury Charter</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Téléphone" data-en="Phone">Téléphone</span>
+                    <span class="contact-value"><a href="tel:+33753150620">+33 7 53 15 06 20</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value"><a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Adresse d'exploitation" data-en="Operating address">Adresse d'exploitation</span>
+                    <span class="contact-value">Port Pierre Canto, Cannes, France</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="2. Directeur de la publication" data-en="2. Publication Director">2. Directeur de la publication</h2>
+            <p data-fr="Le directeur de la publication du site king-yachts.com est le représentant légal de King Yachts Ltd, joignable à l'adresse électronique : contact@king-yachts.com." data-en="The publication director of king-yachts.com is the legal representative of King Yachts Ltd, reachable at: contact@king-yachts.com.">
+                Le directeur de la publication du site <strong>king-yachts.com</strong> est le représentant légal de King Yachts Ltd, joignable à l'adresse électronique : <a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a>.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="3. Hébergement" data-en="3. Hosting">3. Hébergement</h2>
+            <p data-fr="Le site king-yachts.com est hébergé par :" data-en="The website king-yachts.com is hosted by:">Le site king-yachts.com est hébergé par :</p>
+            <div class="info-box">
+                <strong data-fr="Société :" data-en="Company:">Société :</strong> Cloudflare, Inc.<br>
+                <strong data-fr="Adresse :" data-en="Address:">Adresse :</strong> 101 Townsend St, San Francisco, CA 94107, États-Unis<br>
+                <strong>Site web :</strong> <a href="https://www.cloudflare.com" target="_blank">www.cloudflare.com</a>
+            </div>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="4. Propriété intellectuelle" data-en="4. Intellectual Property">4. Propriété intellectuelle</h2>
+            <p data-fr="L'ensemble des éléments constituant le site king-yachts.com (textes, images, photographies, vidéos, graphismes, logos, icônes, charte graphique, architecture du site, etc.) est la propriété exclusive de King Yachts Ltd ou fait l'objet de licences d'utilisation accordées à la société." data-en="All elements of the king-yachts.com website (text, images, photographs, videos, graphics, logos, icons, visual identity, site architecture, etc.) are the exclusive property of King Yachts Ltd or are subject to usage licences granted to the company.">
+                L'ensemble des éléments constituant le site king-yachts.com (textes, images, photographies, vidéos, graphismes, logos, icônes, charte graphique, architecture du site, etc.) est la propriété exclusive de King Yachts Ltd ou fait l'objet de licences d'utilisation accordées à la société.
+            </p>
+            <p data-fr="Toute reproduction, représentation, modification, publication, transmission, dénaturation totale ou partielle de ces éléments, par quelque procédé que ce soit, est interdite sans l'autorisation écrite préalable de King Yachts Ltd, sous peine de poursuites judiciaires." data-en="Any reproduction, representation, modification, publication, transmission or total or partial distortion of these elements, by any means, is prohibited without the prior written consent of King Yachts Ltd, subject to legal proceedings.">
+                Toute reproduction, représentation, modification, publication, transmission, dénaturation totale ou partielle de ces éléments, par quelque procédé que ce soit, est interdite sans l'autorisation écrite préalable de King Yachts Ltd, sous peine de poursuites judiciaires.
+            </p>
+            <p data-fr="La marque King Yachts et ses déclinaisons sont des marques protégées. Toute utilisation non autorisée constitue une contrefaçon sanctionnée par les articles L.713-2 et suivants du Code de la propriété intellectuelle." data-en="The King Yachts trademark and its derivatives are protected marks. Any unauthorised use constitutes infringement under articles L.713-2 et seq. of the French Intellectual Property Code.">
+                La marque <strong>King Yachts</strong> et ses déclinaisons sont des marques protégées. Toute utilisation non autorisée constitue une contrefaçon sanctionnée par les articles L.713-2 et suivants du Code de la propriété intellectuelle.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="5. Liens hypertextes" data-en="5. Hyperlinks">5. Liens hypertextes</h2>
+            <h3 data-fr="Liens sortants" data-en="Outbound links">Liens sortants</h3>
+            <p data-fr="Le site king-yachts.com peut contenir des liens vers des sites tiers. King Yachts Ltd n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur politique de confidentialité ou leurs pratiques." data-en="The king-yachts.com website may contain links to third-party websites. King Yachts Ltd exercises no control over these sites and disclaims all responsibility for their content, privacy policy or practices.">
+                Le site king-yachts.com peut contenir des liens vers des sites tiers. King Yachts Ltd n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur politique de confidentialité ou leurs pratiques.
+            </p>
+            <h3 data-fr="Liens entrants" data-en="Inbound links">Liens entrants</h3>
+            <p data-fr="La mise en place de liens hypertextes pointant vers le site king-yachts.com est autorisée sous réserve de ne pas porter atteinte à l'image de la société, de ne pas utiliser la technique du framing ou de l'inlining, et de ne pas associer le site à un contenu illicite ou contraire aux bonnes mœurs." data-en="Hyperlinks pointing to the king-yachts.com website are permitted provided they do not harm the company's image, do not use framing or inlining techniques, and do not associate the site with unlawful or inappropriate content.">
+                La mise en place de liens hypertextes pointant vers le site king-yachts.com est autorisée sous réserve de ne pas porter atteinte à l'image de la société, de ne pas utiliser la technique du framing ou de l'inlining, et de ne pas associer le site à un contenu illicite ou contraire aux bonnes mœurs.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="6. Droit applicable et juridiction compétente" data-en="6. Governing Law and Jurisdiction">6. Droit applicable et juridiction compétente</h2>
+            <p data-fr="Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de résolution amiable infructueuse, les tribunaux français seront seuls compétents." data-en="These legal notices are governed by French law. In the event of a dispute, and after an unsuccessful attempt at amicable resolution, the French courts shall have sole jurisdiction.">
+                Les présentes mentions légales sont régies par le droit français. En cas de litige, et après tentative de résolution amiable infructueuse, les tribunaux français seront seuls compétents.
+            </p>
+            <p data-fr="Pour toute réclamation, vous pouvez également contacter le médiateur de la consommation désigné par la société conformément à l'ordonnance n° 2015-1033 du 20 août 2015." data-en="For any complaint, you may also contact the consumer mediator appointed by the company pursuant to Order No. 2015-1033 of 20 August 2015.">
+                Pour toute réclamation, vous pouvez également contacter le médiateur de la consommation désigné par la société conformément à l'ordonnance n° 2015-1033 du 20 août 2015.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="7. Cookies" data-en="7. Cookies">7. Cookies</h2>
+            <p data-fr="Le site king-yachts.com est susceptible d'utiliser des cookies à des fins techniques et analytiques. Conformément à la recommandation de la CNIL du 17 septembre 2020, les cookies non essentiels ne sont déposés qu'avec votre consentement explicite. Pour plus d'informations, consultez notre Politique de Confidentialité." data-en="The king-yachts.com website may use cookies for technical and analytical purposes. In accordance with the CNIL recommendation of 17 September 2020, non-essential cookies are only placed with your explicit consent. For more information, please consult our Privacy Policy.">
+                Le site king-yachts.com est susceptible d'utiliser des cookies à des fins techniques et analytiques. Conformément à la recommandation de la CNIL du 17 septembre 2020, les cookies non essentiels ne sont déposés qu'avec votre consentement explicite. Pour plus d'informations, consultez notre <a href="#" onclick="showTab('confidentialite');return false;">Politique de Confidentialité</a>.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="8. Limitation de responsabilité" data-en="8. Limitation of Liability">8. Limitation de responsabilité</h2>
+            <p data-fr="Les informations contenues sur ce site sont aussi précises que possible et le site est régulièrement mis à jour. Cependant, King Yachts Ltd ne peut garantir l'exactitude, la complétude ou l'actualité de toutes les informations diffusées. À ce titre, l'utilisateur reconnaît utiliser ces informations sous sa propre responsabilité." data-en="The information contained on this website is as accurate as possible and the site is regularly updated. However, King Yachts Ltd cannot guarantee the accuracy, completeness or currency of all information published. The user accordingly acknowledges using such information at their own risk.">
+                Les informations contenues sur ce site sont aussi précises que possible et le site est régulièrement mis à jour. Cependant, King Yachts Ltd ne peut garantir l'exactitude, la complétude ou l'actualité de toutes les informations diffusées. À ce titre, l'utilisateur reconnaît utiliser ces informations sous sa propre responsabilité.
+            </p>
+            <p data-fr="La responsabilité de King Yachts Ltd ne saurait être engagée en raison d'interruptions, bugs techniques, attaques informatiques, ou indisponibilités du réseau internet indépendantes de sa volonté." data-en="King Yachts Ltd shall not be liable for interruptions, technical bugs, cyberattacks or unavailability of the internet network beyond its control.">
+                La responsabilité de King Yachts Ltd ne saurait être engagée en raison d'interruptions, bugs techniques, attaques informatiques, ou indisponibilités du réseau internet indépendantes de sa volonté.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─── CGV ─── -->
+    <div id="cgv" class="panel">
+        <div class="update-badge" data-fr="Version en vigueur au 1er janvier 2026" data-en="Version in force as of January 1, 2026">Version en vigueur au 1er janvier 2026</div>
+        <span class="section-tag" data-fr="Code de la Consommation · Code du Tourisme · Droit Maritime" data-en="Consumer Code · Tourism Code · Maritime Law">Code de la Consommation · Code du Tourisme · Droit Maritime</span>
+        <h2 class="section-title" data-fr="Conditions Générales de Vente" data-en="General Terms and Conditions of Sale">Conditions Générales de Vente</h2>
+
+        <div class="info-box">
+            <strong data-fr="Important :" data-en="Important:">Important :</strong> <span data-fr="En effectuant une réservation auprès de King Yachts, le client reconnaît avoir pris connaissance des présentes Conditions Générales de Vente (CGV) et les accepter sans réserve. Ces CGV prévalent sur tout autre document du client." data-en="By making a booking with King Yachts, the client acknowledges having read these General Terms and Conditions of Sale (GTCS) and accepts them without reservation. These GTCS take precedence over any other document from the client.">En effectuant une réservation auprès de King Yachts, le client reconnaît avoir pris connaissance des présentes Conditions Générales de Vente (CGV) et les accepter sans réserve. Ces CGV prévalent sur tout autre document du client.</span>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 1 — Identité du prestataire" data-en="Article 1 — Service Provider Identity">Article 1 — Identité du prestataire</h2>
+            <p data-fr="Les présentes CGV sont conclues entre :" data-en="These GTCS are entered into between:">Les présentes CGV sont conclues entre :</p>
+            <ul>
+                <li data-fr="King Yachts Ltd, société de droit anglais, exploitant la marque commerciale King Yachts — Luxury Charter, dont le bureau d'exploitation est situé Port Pierre Canto, Cannes, France (ci-après « King Yachts » ou « le Prestataire »)" data-en="King Yachts Ltd, an English law company, operating under the trade name King Yachts — Luxury Charter, with operating offices at Port Pierre Canto, Cannes, France (hereinafter 'King Yachts' or 'the Provider')"><strong>King Yachts Ltd</strong>, société de droit anglais, exploitant la marque commerciale <strong>King Yachts — Luxury Charter</strong>, dont le bureau d'exploitation est situé Port Pierre Canto, Cannes, France (ci-après « King Yachts » ou « le Prestataire »)</li>
+                <li data-fr="Et toute personne physique ou morale souhaitant procéder à une réservation de charter yachting via le site king-yachts.com ou par voie directe (ci-après « le Client »)." data-en="And any natural or legal person wishing to book a yacht charter via the king-yachts.com website or directly (hereinafter 'the Client').">Et toute personne physique ou morale souhaitant procéder à une réservation de charter yachting via le site king-yachts.com ou par voie directe (ci-après « le Client »).</li>
+            </ul>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 2 — Objet et champ d'application" data-en="Article 2 — Subject Matter and Scope">Article 2 — Objet et champ d'application</h2>
+            <p data-fr="Les présentes CGV régissent exclusivement les contrats d'affrètement de yachts de luxe proposés par King Yachts dans ses destinations opérationnelles : Cannes (France), Monaco et les Caraïbes." data-en="These GTCS exclusively govern luxury yacht charter contracts offered by King Yachts in its operational destinations: Cannes (France), Monaco and the Caribbean.">
+                Les présentes CGV régissent exclusivement les contrats d'affrètement de yachts de luxe proposés par King Yachts dans ses destinations opérationnelles : <strong>Cannes (France), Monaco et les Caraïbes</strong>.
+            </p>
+            <p data-fr="Elles s'appliquent à toute réservation quelle qu'en soit la modalité (en ligne, téléphonique, par email ou via un intermédiaire accrédité). Les devis, offres personnalisées et confirmations de réservation font partie intégrante du contrat." data-en="They apply to all bookings regardless of the method used (online, telephone, email or via an accredited intermediary). Quotes, personalised offers and booking confirmations form an integral part of the contract.">
+                Elles s'appliquent à toute réservation quelle qu'en soit la modalité (en ligne, téléphonique, par email ou via un intermédiaire accrédité). Les devis, offres personnalisées et confirmations de réservation font partie intégrante du contrat.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 3 — Modalités de réservation" data-en="Article 3 — Booking Conditions">Article 3 — Modalités de réservation</h2>
+            <h3 data-fr="3.1 — Demande de devis" data-en="3.1 — Quote Request">3.1 — Demande de devis</h3>
+            <p data-fr="Le Client peut soumettre une demande de charter via le formulaire de réservation en ligne, par email à contact@king-yachts.com ou par téléphone au +33 7 53 15 06 20. Un conseiller King Yachts prendra contact sous 24 heures ouvrées." data-en="The Client may submit a charter request via the online booking form, by email at contact@king-yachts.com or by phone at +33 7 53 15 06 20. A King Yachts adviser will contact you within 24 business hours.">
+                Le Client peut soumettre une demande de charter via le formulaire de réservation en ligne. Un conseiller King Yachts prendra contact sous 20 minutes.
+            </p>
+            <h3 data-fr="3.2 — Confirmation de réservation" data-en="3.2 — Booking Confirmation">3.2 — Confirmation de réservation</h3>
+            <p data-fr="La réservation est ferme et définitive à réception par King Yachts :" data-en="The booking is firm and final upon receipt by King Yachts of:">La réservation est ferme et définitive à réception par King Yachts :</p>
+            <ol>
+                <li data-fr="Du contrat d'affrètement signé par le Client ;" data-en="The charter contract signed by the Client;">Du contrat d'affrètement signé par le Client ;</li>
+                <li data-fr="Du versement de l'acompte de 30 % du montant total du charter ;" data-en="Payment of the 30% deposit of the total charter amount;">Du versement de l'acompte de <strong>30 % du montant total</strong> du charter ;</li>
+                <li data-fr="Des documents d'identification requis (carte d'identité ou passeport du Client principal)." data-en="The required identification documents (identity card or passport of the main Client).">Des documents d'identification requis (carte d'identité ou passeport du Client principal).</li>
+            </ol>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 4 — Prix et modalités de paiement" data-en="Article 4 — Pricing and Payment">Article 4 — Prix et modalités de paiement</h2>
+            <h3 data-fr="4.1 — Tarifs" data-en="4.1 — Pricing">4.1 — Tarifs</h3>
+            <p data-fr="Les prix affichés sur le site king-yachts.com sont exprimés en euros (€) TTC. Ils peuvent varier selon la saison, la durée de location, le yacht sélectionné et les options souscrites." data-en="Prices displayed on the king-yachts.com website are in euros (€) inclusive of tax. They may vary according to season, rental duration, the selected yacht and options chosen.">
+                Les prix affichés sur le site king-yachts.com sont exprimés en <strong>euros (€) TTC</strong>. Ils peuvent varier selon la saison, la durée de location, le yacht sélectionné et les options souscrites.
+            </p>
+            <div class="info-box">
+                <strong data-fr="Inclus dans le prix standard :" data-en="Included in the standard price:">Inclus dans le prix standard :</strong> <span data-fr="équipage professionnel (capitaine + matelots selon le yacht), assurance du navire, carburant pour les croisières standards, usage des équipements de bord." data-en="professional crew (captain + deckhands as per yacht), vessel insurance, fuel for standard cruises, use of on-board equipment.">équipage professionnel (capitaine + matelots selon le yacht), assurance du navire, carburant pour les croisières standards, usage des équipements de bord.</span><br><br>
+                <strong data-fr="Non inclus (APA) :" data-en="Not included (APA):"></strong> <span data-fr="nourriture et boissons, carburant supplémentaire au-delà du forfait inclus, frais de port et droits de mouillage, transferts, activités nautiques optionnelles, pourboires d'équipage." data-en="food and beverages, additional fuel beyond the included allowance, port fees and mooring charges, transfers, optional water sports, crew gratuities.">Nourriture et boissons, carburant supplémentaire au-delà du forfait inclus, frais de port et droits de mouillage, transferts, activités nautiques optionnelles, pourboires d'équipage.</span>
+            </div>
+            <h3 data-fr="4.2 — Échéancier de paiement" data-en="4.2 — Payment Schedule">4.2 — Échéancier de paiement</h3>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Échéance" data-en="Payment">Échéance</th>
+                        <th data-fr="Montant" data-en="Amount">Montant</th>
+                        <th data-fr="Délai" data-en="Timing">Délai</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Acompte de réservation" data-en="Booking deposit">Acompte de réservation</td>
+                        <td data-fr="30 % du total" data-en="30% of total">30 % du total</td>
+                        <td data-fr="À la signature du contrat" data-en="Upon contract signature">À la signature du contrat</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Solde" data-en="Balance">Solde</td>
+                        <td data-fr="70 % restant" data-en="Remaining 70%">70 % restant</td>
+                        <td data-fr="Le même jour que le match." data-en="No later than 30 days before departure">Le même jour que le match.</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Dépôt de garantie" data-en="Security deposit">Dépôt de garantie</td>
+                        <td data-fr="Selon le yacht (indiqué au contrat)" data-en="As per yacht (stated in contract)">Selon le yacht (indiqué au contrat)</td>
+                        <td data-fr="48h avant l'embarquement" data-en="48h before embarkation">48h avant l'embarquement</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 5 — Annulation et remboursement" data-en="Article 5 — Cancellation and Refund">Article 5 — Annulation et remboursement</h2>
+            <h3 data-fr="5.1 — Annulation par le Client" data-en="5.1 — Cancellation by the Client">5.1 — Annulation par le Client</h3>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Délai avant le départ" data-en="Time before departure">Délai avant le départ</th>
+                        <th data-fr="Pénalités d'annulation" data-en="Cancellation penalties">Pénalités d'annulation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Plus de 90 jours" data-en="More than 90 days">Plus de 90 jours</td>
+                        <td data-fr="20 % du montant total (frais de dossier)" data-en="20% of total amount (administrative fee)">20 % du montant total (frais de dossier)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Entre 60 et 90 jours" data-en="Between 60 and 90 days">Entre 60 et 90 jours</td>
+                        <td data-fr="40 % du montant total" data-en="40% of total amount">40 % du montant total</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Entre 30 et 59 jours" data-en="Between 30 and 59 days">Entre 30 et 59 jours</td>
+                        <td data-fr="70 % du montant total" data-en="70% of total amount">70 % du montant total</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Moins de 30 jours" data-en="Less than 30 days">Moins de 30 jours</td>
+                        <td data-fr="100 % du montant total" data-en="100% of total amount">100 % du montant total</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-fr="Toute annulation doit être notifiée par écrit (email recommandé) à contact@king-yachts.com. La date de réception de la notification fait foi." data-en="All cancellations must be notified in writing (recommended email) to contact@king-yachts.com. The date of receipt of the notification is binding.">
+                Toute annulation doit être notifiée par écrit (email recommandé) à <a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a>. La date de réception de la notification fait foi.
+            </p>
+            <h3 data-fr="5.2 — Annulation par King Yachts" data-en="5.2 — Cancellation by King Yachts">5.2 — Annulation par King Yachts</h3>
+            <p data-fr="En cas d'annulation à l'initiative de King Yachts (hors cas de force majeure), le Client sera intégralement remboursé dans un délai de 14 jours. King Yachts pourra, en accord avec le Client, proposer une prestation de remplacement équivalente." data-en="In the event of cancellation by King Yachts (excluding force majeure), the Client will be fully refunded within 14 days. King Yachts may, by agreement with the Client, propose an equivalent alternative service.">
+                En cas d'annulation à l'initiative de King Yachts (hors cas de force majeure), le Client sera intégralement remboursé dans un délai de 14 jours. King Yachts pourra, en accord avec le Client, proposer une prestation de remplacement équivalente.
+            </p>
+            <h3 data-fr="5.3 — Force majeure" data-en="5.3 — Force Majeure">5.3 — Force majeure</h3>
+            <p data-fr="En cas d'annulation due à un événement de force majeure (conditions météorologiques exceptionnelles, ordre des autorités maritimes, guerre, pandémie, etc.), King Yachts proposera au Client un avoir valable 24 mois ou un report de la prestation. Aucun remboursement en numéraire ne sera dû dans ce cas de figure, conformément aux dispositions de l'article 1218 du Code civil." data-en="In the event of cancellation due to a force majeure event (exceptional weather conditions, order of maritime authorities, war, pandemic, etc.), King Yachts will offer the Client a credit valid for 24 months or a rescheduling of the service. No cash refund shall be due in such cases, pursuant to article 1218 of the French Civil Code.">
+                En cas d'annulation due à un événement de force majeure (conditions météorologiques exceptionnelles, ordre des autorités maritimes, guerre, pandémie, etc.), King Yachts proposera au Client un avoir valable 24 mois ou un report de la prestation. Aucun remboursement en numéraire ne sera dû dans ce cas de figure, conformément aux dispositions de l'article 1218 du Code civil.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 6 — Obligations du prestataire" data-en="Article 6 — Provider Obligations">Article 6 — Obligations du prestataire</h2>
+            <p data-fr="King Yachts s'engage à :" data-en="King Yachts undertakes to:">King Yachts s'engage à :</p>
+            <ul>
+                <li data-fr="Mettre à disposition le yacht réservé aux dates et lieux convenus, en parfait état de navigabilité ;" data-en="Make the booked yacht available at the agreed dates and locations, in perfect seaworthy condition;">Mettre à disposition le yacht réservé aux dates et lieux convenus, en parfait état de navigabilité ;</li>
+                <li data-fr="Fournir un équipage professionnel certifié et qualifié selon les normes STCW ;" data-en="Provide a certified and qualified professional crew in accordance with STCW standards;">Fournir un équipage professionnel certifié et qualifié selon les normes STCW ;</li>
+                <li data-fr="Assurer la conformité du navire à toutes les réglementations maritimes en vigueur ;" data-en="Ensure the vessel's compliance with all applicable maritime regulations;">Assurer la conformité du navire à toutes les réglementations maritimes en vigueur ;</li>
+                <li data-fr="Souscrire et maintenir une assurance responsabilité civile couvrant le navire et les passagers ;" data-en="Take out and maintain civil liability insurance covering the vessel and passengers;">Souscrire et maintenir une assurance responsabilité civile couvrant le navire et les passagers ;</li>
+                <li data-fr="Respecter les itinéraires convenus dans les limites des conditions météorologiques et des réglementations locales ;" data-en="Adhere to agreed itineraries within the limits of weather conditions and local regulations;">Respecter les itinéraires convenus dans les limites des conditions météorologiques et des réglementations locales ;</li>
+                <li data-fr="Garantir la confidentialité des informations personnelles du Client." data-en="Guarantee the confidentiality of the Client's personal information.">Garantir la confidentialité des informations personnelles du Client.</li>
+            </ul>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 7 — Obligations du client" data-en="Article 7 — Client Obligations">Article 7 — Obligations du client</h2>
+            <p data-fr="Le Client s'engage à :" data-en="The Client undertakes to:">Le Client s'engage à :</p>
+            <ul>
+                <li data-fr="Respecter les consignes de sécurité données par le capitaine, dont l'autorité est souveraine à bord ;" data-en="Comply with safety instructions given by the captain, whose authority is sovereign on board;">Respecter les consignes de sécurité données par le capitaine, dont l'autorité est souveraine à bord ;</li>
+                <li data-fr="Ne pas excéder la capacité maximale de passagers autorisée du yacht ;" data-en="Not exceed the maximum authorised passenger capacity of the yacht;">Ne pas excéder la capacité maximale de passagers autorisée du yacht ;</li>
+                <li data-fr="Ne pas introduire à bord des substances illicites, des armes ou matériaux dangereux ;" data-en="Not bring on board any illicit substances, weapons or hazardous materials;">Ne pas introduire à bord des substances illicites, des armes ou matériaux dangereux ;</li>
+                <li data-fr="Respecter les règlements portuaires et les zones protégées (parcs naturels, zones de mouillage interdites) ;" data-en="Respect port regulations and protected areas (nature reserves, prohibited anchorage zones);">Respecter les règlements portuaires et les zones protégées (parcs naturels, zones de mouillage interdites) ;</li>
+                <li data-fr="Rendre le yacht dans un état d'entretien similaire à celui de la prise en charge, à l'usure normale près ;" data-en="Return the yacht in similar condition to that at handover, fair wear and tear excepted;">Rendre le yacht dans un état d'entretien similaire à celui de la prise en charge, à l'usure normale près ;</li>
+                <li data-fr="Signaler immédiatement au capitaine tout incident, dommage ou dysfonctionnement constaté." data-en="Immediately report to the captain any incident, damage or malfunction observed.">Signaler immédiatement au capitaine tout incident, dommage ou dysfonctionnement constaté.</li>
+            </ul>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 8 — Responsabilité et assurance" data-en="Article 8 — Liability and Insurance">Article 8 — Responsabilité et assurance</h2>
+            <h3 data-fr="8.1 — Assurance du navire" data-en="8.1 — Vessel Insurance">8.1 — Assurance du navire</h3>
+            <p data-fr="Le yacht est couvert par une assurance maritime tous risques incluant la responsabilité civile envers les tiers. Une attestation d'assurance peut être communiquée au Client sur simple demande." data-en="The yacht is covered by comprehensive marine insurance including third-party civil liability. An insurance certificate can be provided to the Client upon simple request.">
+                Le yacht est couvert par une assurance maritime tous risques incluant la responsabilité civile envers les tiers. Une attestation d'assurance peut être communiquée au Client sur simple demande.
+            </p>
+            <h3 data-fr="8.2 — Assurance du Client" data-en="8.2 — Client Insurance">8.2 — Assurance du Client</h3>
+            <p data-fr="Il est fortement recommandé au Client de souscrire une assurance voyage couvrant l'annulation, les bagages, les accidents et les rapatriements. King Yachts ne peut être tenu responsable des dommages corporels, matériels ou moraux subis par les passagers résultant d'un comportement imprudent ou du non-respect des consignes de sécurité." data-en="It is strongly recommended that the Client take out travel insurance covering cancellation, baggage, accidents and repatriation. King Yachts cannot be held liable for physical, material or moral damages suffered by passengers resulting from reckless behaviour or failure to comply with safety instructions.">
+                Il est fortement recommandé au Client de souscrire une assurance voyage couvrant l'annulation, les bagages, les accidents et les rapatriements.
+            </p>
+            <h3 data-fr="8.3 — Limitation de responsabilité" data-en="8.3 — Limitation of Liability">8.3 — Limitation de responsabilité</h3>
+            <p data-fr="La responsabilité de King Yachts ne saurait excéder le montant total du charter perçu. King Yachts n'est pas responsable des préjudices indirects (manque à gagner, perte de chance, préjudice commercial) subis par le Client." data-en="King Yachts' liability shall not exceed the total amount of the charter received. King Yachts is not liable for indirect damages (loss of earnings, loss of opportunity, commercial loss) suffered by the Client.">
+                La responsabilité de King Yachts ne saurait excéder le montant total du charter perçu. King Yachts n'est pas responsable des préjudices indirects (manque à gagner, perte de chance, préjudice commercial) subis par le Client.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="Article 9 — Droit applicable et litiges" data-en="Article 9 — Governing Law and Disputes">Article 9 — Droit applicable et litiges</h2>
+            <h3 data-fr="9.1 — Droit applicable" data-en="9.1 — Governing Law">9.1 — Droit applicable</h3>
+            <p data-fr="Les présentes CGV sont régies par le droit français, sous réserve des conventions internationales de droit maritime applicables." data-en="These GTCS are governed by French law, subject to applicable international maritime law conventions.">
+                Les présentes CGV sont régies par le droit français, sous réserve des conventions internationales de droit maritime applicables.
+            </p>
+            <h3 data-fr="9.2 — Médiation de la consommation" data-en="9.2 — Consumer Mediation">9.2 — Médiation de la consommation</h3>
+            <p data-fr="Conformément à l'ordonnance n° 2015-1033 du 20 août 2015, tout litige découlant du présent contrat pourra faire l'objet d'une médiation. La plateforme européenne de règlement en ligne des litiges est accessible à l'adresse : https://ec.europa.eu/consumers/odr." data-en="Pursuant to Order No. 2015-1033 of 20 August 2015, any dispute arising from this contract may be subject to mediation. The European Online Dispute Resolution platform is accessible at: https://ec.europa.eu/consumers/odr.">
+                Conformément à l'ordonnance n° 2015-1033 du 20 août 2015, tout litige découlant du présent contrat pourra faire l'objet d'une médiation. La plateforme européenne de règlement en ligne des litiges est accessible à l'adresse : <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>.
+            </p>
+            <h3 data-fr="9.3 — Juridiction compétente" data-en="9.3 — Jurisdiction">9.3 — Juridiction compétente</h3>
+            <p data-fr="En cas d'échec de la médiation, tout litige sera soumis à la compétence exclusive des tribunaux de Grasse (Alpes-Maritimes), sauf disposition légale impérative contraire applicable aux consommateurs." data-en="In the event of failed mediation, any dispute shall be subject to the exclusive jurisdiction of the courts of Grasse (Alpes-Maritimes), unless mandatory legal provisions applicable to consumers dictate otherwise.">
+                En cas d'échec de la médiation, tout litige sera soumis à la compétence exclusive des tribunaux de <strong>Grasse (Alpes-Maritimes)</strong>, sauf disposition légale impérative contraire applicable aux consommateurs.
+            </p>
+        </div>
+    </div>
+
+    <!-- ─── POLITIQUE DE CONFIDENTIALITÉ ─── -->
+    <div id="confidentialite" class="panel">
+        <div class="update-badge" data-fr="Mise à jour : 1er janvier 2026 — Conforme RGPD (UE 2016/679)" data-en="Updated: January 1, 2026 — GDPR compliant (EU 2016/679)">Mise à jour : 1er janvier 2026 — Conforme RGPD (UE 2016/679)</div>
+        <span class="section-tag" data-fr="Règlement Général sur la Protection des Données · Loi Informatique et Libertés" data-en="General Data Protection Regulation · French Data Protection Act">Règlement Général sur la Protection des Données · Loi Informatique et Libertés</span>
+        <h2 class="section-title" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</h2>
+
+        <div class="info-box">
+            <strong data-fr="Engagement King Yachts :" data-en="King Yachts commitment:">Engagement King Yachts :</strong> <span data-fr="La protection de vos données personnelles est une priorité pour King Yachts Ltd. Nous nous engageons à traiter vos données conformément au Règlement Général sur la Protection des Données (RGPD) n° 2016/679 du 27 avril 2016 et à la Loi n° 78-17 du 6 janvier 1978 modifiée (Loi Informatique et Libertés)." data-en="The protection of your personal data is a priority for King Yachts Ltd. We are committed to processing your data in compliance with the General Data Protection Regulation (GDPR) No. 2016/679 of 27 April 2016 and Act No. 78-17 of 6 January 1978 as amended (French Data Protection Act).">La protection de vos données personnelles est une priorité pour King Yachts Ltd. Nous nous engageons à traiter vos données conformément au Règlement Général sur la Protection des Données (RGPD) n° 2016/679 du 27 avril 2016 et à la Loi n° 78-17 du 6 janvier 1978 modifiée (Loi Informatique et Libertés).</span>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="1. Responsable du traitement" data-en="1. Data Controller">1. Responsable du traitement</h2>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Responsable" data-en="Controller">Responsable</span>
+                    <span class="contact-value">King Yachts Ltd</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Marque" data-en="Brand">Marque</span>
+                    <span class="contact-value">King Yachts — Luxury Charter</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Email DPO / Contact" data-en="DPO / Contact Email">Email DPO / Contact</span>
+                    <span class="contact-value"><a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a></span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label" data-fr="Téléphone" data-en="Phone">Téléphone</span>
+                    <span class="contact-value"><a href="tel:+33753150620">+33 7 53 15 06 20</a></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="2. Données collectées" data-en="2. Data Collected">2. Données collectées</h2>
+            <h3 data-fr="2.1 — Données collectées directement" data-en="2.1 — Directly Collected Data">2.1 — Données collectées directement</h3>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Catégorie" data-en="Category">Catégorie</th>
+                        <th data-fr="Données collectées" data-en="Data collected">Données collectées</th>
+                        <th data-fr="Caractère" data-en="Nature">Caractère</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Identité" data-en="Identity">Identité</td>
+                        <td data-fr="Nom, prénom, date de naissance, nationalité, pièce d'identité" data-en="Name, first name, date of birth, nationality, identity document">Nom, prénom, date de naissance, nationalité, pièce d'identité</td>
+                        <td data-fr="Obligatoire" data-en="Mandatory">Obligatoire</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Contact" data-en="Contact">Contact</td>
+                        <td data-fr="Adresse email, numéro de téléphone, adresse postale" data-en="Email address, phone number, postal address">Adresse email, numéro de téléphone, adresse postale</td>
+                        <td data-fr="Obligatoire" data-en="Mandatory">Obligatoire</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Réservation" data-en="Booking">Réservation</td>
+                        <td data-fr="Dates, destination, yacht choisi, nombre de passagers, demandes spéciales" data-en="Dates, destination, chosen yacht, number of passengers, special requests">Dates, destination, yacht choisi, nombre de passagers, demandes spéciales</td>
+                        <td data-fr="Obligatoire" data-en="Mandatory">Obligatoire</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Paiement" data-en="Payment">Paiement</td>
+                        <td data-fr="Données de carte bancaire (via processeur sécurisé — non conservées par King Yachts)" data-en="Card data (via secure processor — not retained by King Yachts)">Données de carte bancaire (via processeur sécurisé — non conservées par King Yachts)</td>
+                        <td data-fr="Obligatoire" data-en="Mandatory">Obligatoire</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Préférences" data-en="Preferences">Préférences</td>
+                        <td data-fr="Régimes alimentaires, activités souhaitées, préférences de bord" data-en="Dietary requirements, desired activities, on-board preferences">Régimes alimentaires, activités souhaitées, préférences de bord</td>
+                        <td data-fr="Facultatif" data-en="Optional">Facultatif</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="3. Finalités et bases légales du traitement" data-en="3. Purposes and Legal Bases">3. Finalités et bases légales du traitement</h2>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Finalité" data-en="Purpose">Finalité</th>
+                        <th data-fr="Base légale (art. 6 RGPD)" data-en="Legal basis (art. 6 GDPR)">Base légale (art. 6 RGPD)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Traitement et suivi des réservations" data-en="Processing and tracking bookings">Traitement et suivi des réservations</td>
+                        <td data-fr="Exécution du contrat (art. 6.1.b)" data-en="Performance of contract (art. 6.1.b)">Exécution du contrat (art. 6.1.b)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Facturation et comptabilité" data-en="Invoicing and accounting">Facturation et comptabilité</td>
+                        <td data-fr="Obligation légale (art. 6.1.c)" data-en="Legal obligation (art. 6.1.c)">Obligation légale (art. 6.1.c)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Prévention de la fraude, conformité KYC" data-en="Fraud prevention, KYC compliance">Prévention de la fraude, conformité KYC</td>
+                        <td data-fr="Intérêt légitime / Obligation légale (art. 6.1.c-f)" data-en="Legitimate interest / Legal obligation (art. 6.1.c-f)">Intérêt légitime / Obligation légale (art. 6.1.c-f)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Envoi d'offres commerciales (newsletter)" data-en="Sending commercial offers (newsletter)">Envoi d'offres commerciales (newsletter)</td>
+                        <td data-fr="Consentement (art. 6.1.a)" data-en="Consent (art. 6.1.a)">Consentement (art. 6.1.a)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Dépôt de cookies non essentiels" data-en="Non-essential cookies">Dépôt de cookies non essentiels</td>
+                        <td data-fr="Consentement (art. 6.1.a)" data-en="Consent (art. 6.1.a)">Consentement (art. 6.1.a)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="4. Durées de conservation" data-en="4. Retention Periods">4. Durées de conservation</h2>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Données" data-en="Data">Données</th>
+                        <th data-fr="Durée de conservation" data-en="Retention period">Durée de conservation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Données de réservation et contrats" data-en="Booking data and contracts">Données de réservation et contrats</td>
+                        <td data-fr="5 ans à compter de la fin de la relation contractuelle" data-en="5 years from end of contractual relationship">5 ans à compter de la fin de la relation contractuelle</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Données de facturation et comptables" data-en="Invoicing and accounting data">Données de facturation et comptables</td>
+                        <td data-fr="10 ans (obligation légale — Code de commerce)" data-en="10 years (legal obligation — Commercial Code)">10 ans (obligation légale — Code de commerce)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Cookies analytiques" data-en="Analytical cookies">Cookies analytiques</td>
+                        <td data-fr="13 mois maximum (recommandation CNIL)" data-en="13 months maximum (CNIL recommendation)">13 mois maximum (recommandation CNIL)</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Données de prospection commerciale" data-en="Commercial prospecting data">Données de prospection commerciale</td>
+                        <td data-fr="3 ans à compter du dernier contact" data-en="3 years from last contact">3 ans à compter du dernier contact</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Pièces d'identité (conformité KYC)" data-en="Identity documents (KYC compliance)">Pièces d'identité (conformité KYC)</td>
+                        <td data-fr="5 ans après la fin de la prestation" data-en="5 years after the end of the service">5 ans après la fin de la prestation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="5. Vos droits" data-en="5. Your Rights">5. Vos droits</h2>
+            <p data-fr="Conformément aux articles 15 à 22 du RGPD, vous disposez des droits suivants sur vos données personnelles :" data-en="In accordance with articles 15 to 22 of the GDPR, you have the following rights regarding your personal data:">
+                Conformément aux articles 15 à 22 du RGPD et à la Loi Informatique et Libertés, vous disposez des droits suivants sur vos données personnelles :
+            </p>
+            <table class="legal-table">
+                <thead>
+                    <tr>
+                        <th data-fr="Droit" data-en="Right">Droit</th>
+                        <th data-fr="Description" data-en="Description">Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-fr="Accès (art. 15)" data-en="Access (art. 15)"><strong data-fr="Accès" data-en="Access">Accès</strong> (art. 15)</td>
+                        <td data-fr="Obtenir une copie de vos données traitées et des informations sur ce traitement" data-en="Obtain a copy of your processed data and information about such processing">Obtenir une copie de vos données traitées et des informations sur ce traitement</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Rectification (art. 16)" data-en="Rectification (art. 16)"><strong data-fr="Rectification" data-en="Rectification">Rectification</strong> (art. 16)</td>
+                        <td data-fr="Corriger des données inexactes ou incomplètes" data-en="Correct inaccurate or incomplete data">Corriger des données inexactes ou incomplètes</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Effacement (art. 17)" data-en="Erasure (art. 17)"><strong data-fr="Effacement" data-en="Erasure">Effacement</strong> (art. 17)</td>
+                        <td data-fr="Demander la suppression de vos données dans les conditions légales" data-en="Request deletion of your data under legal conditions">Demander la suppression de vos données dans les conditions légales</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Portabilité (art. 20)" data-en="Portability (art. 20)"><strong data-fr="Portabilité" data-en="Portability">Portabilité</strong> (art. 20)</td>
+                        <td data-fr="Recevoir vos données dans un format structuré et lisible par machine" data-en="Receive your data in a structured, machine-readable format">Recevoir vos données dans un format structuré et lisible par machine</td>
+                    </tr>
+                    <tr>
+                        <td data-fr="Opposition (art. 21)" data-en="Objection (art. 21)"><strong data-fr="Opposition" data-en="Objection">Opposition</strong> (art. 21)</td>
+                        <td data-fr="Vous opposer au traitement basé sur l'intérêt légitime ou à la prospection commerciale" data-en="Object to processing based on legitimate interest or to commercial prospecting">Vous opposer au traitement basé sur l'intérêt légitime ou à la prospection commerciale</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p data-fr="Pour exercer ces droits, adressez votre demande par email à contact@king-yachts.com en joignant une copie de votre pièce d'identité. King Yachts s'engage à vous répondre dans un délai d'un mois." data-en="To exercise these rights, send your request by email to contact@king-yachts.com with a copy of your identity document. King Yachts undertakes to respond within one month.">
+                Pour exercer ces droits, adressez votre demande par email à <a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a> en joignant une copie de votre pièce d'identité. King Yachts s'engage à vous répondre dans un délai d'<strong>un mois</strong>.
+            </p>
+            <p data-fr="En cas de réponse insatisfaisante, vous pouvez introduire une réclamation auprès de la CNIL : www.cnil.fr — 3, Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07." data-en="If you are unsatisfied with the response, you may file a complaint with the CNIL: www.cnil.fr — 3, Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.">
+                En cas de réponse insatisfaisante, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr" target="_blank">www.cnil.fr</a> — 3, Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07.
+            </p>
+        </div>
+
+        <div class="legal-block">
+            <h2 data-fr="6. Sécurité des données" data-en="6. Data Security">6. Sécurité des données</h2>
+            <p data-fr="King Yachts met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation, conformément à l'article 32 du RGPD. Ces mesures incluent notamment :" data-en="King Yachts implements appropriate technical and organisational measures to protect your data against unauthorised access, loss, alteration or disclosure, in accordance with article 32 of the GDPR. These measures include:">
+                King Yachts met en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos données contre tout accès non autorisé, perte, altération ou divulgation, conformément à l'article 32 du RGPD. Ces mesures incluent notamment :
+            </p>
+            <ul>
+                <li data-fr="Chiffrement TLS/SSL de toutes les communications ;" data-en="TLS/SSL encryption of all communications;">Chiffrement TLS/SSL de toutes les communications ;</li>
+                <li data-fr="Cloisonnement des accès aux données selon le principe du moindre privilège ;" data-en="Data access segregation based on the principle of least privilege;">Cloisonnement des accès aux données selon le principe du moindre privilège ;</li>
+                <li data-fr="Audit régulier des systèmes informatiques ;" data-en="Regular audit of IT systems;">Audit régulier des systèmes informatiques ;</li>
+                <li data-fr="Formation du personnel traitant les données personnelles ;" data-en="Training of staff handling personal data;">Formation du personnel traitant les données personnelles ;</li>
+                <li data-fr="Certification PCI-DSS pour les données de paiement (via prestataire dédié)." data-en="PCI-DSS certification for payment data (via dedicated provider).">Certification PCI-DSS pour les données de paiement (via prestataire dédié).</li>
+            </ul>
+        </div>
+    </div>
+
+</div><!-- /page-body -->
+
+<!-- WhatsApp -->
+<a class="whatsapp-btn" href="https://wa.me/33753150620" target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-label" data-fr="Nous écrire" data-en="Chat with us">Nous écrire</span>
+</a>
+
+<!-- Footer -->
+<footer id="contact">
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <span class="logo-crown">♛</span>
+                <span class="logo-name">King Yachts</span>
+            </div>
+            <p data-fr="Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige." data-en="Experience luxury at sea with our yacht charter services in Cannes, Monaco and the Caribbean. An exclusive fleet of 10 prestigious yachts.">
+                Découvrez le luxe en mer avec nos services de location de yachts à Cannes, Monaco et dans les Caraïbes. Une flotte exclusive de 10 yachts de prestige.
+            </p>
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Navigation" data-en="Navigation">Navigation</h5>
+            <a href="http://king-yachts.com" data-fr="Accueil" data-en="Home">Accueil</a>
+            <a href="cannes.html" data-fr="Cannes" data-en="Cannes">Cannes</a>
+            <a href="monaco.html" data-fr="Monaco" data-en="Monaco">Monaco</a>
+            <a href="caribbean.html" data-fr="Caraïbes" data-en="Caribbean">Caraïbes</a>
+            <a href="http://king-yachts.com/#faq" data-fr="FAQ" data-en="FAQ">FAQ</a>
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Contact" data-en="Contact">Contact</h5>
+            <a href="tel:+33753150620">+33 7 53 15 06 20</a>
+            <a href="mailto:contact@king-yachts.com">contact@king-yachts.com</a>
+            <a href="https://wa.me/33753150620">WhatsApp</a>
+        </div>
+        <div class="footer-col">
+            <h5 data-fr="Horaires" data-en="Hours">Horaires</h5>
+            <a href="#" data-fr="Lun – Ven : 9h – 19h" data-en="Mon – Fri: 9AM – 7PM">Lun – Ven : 9h – 19h</a>
+            <a href="#" data-fr="Sam/Dim : 10h – 20h" data-en="Sat/Sun: 10AM – 8PM">Sam/Dim : 10h – 20h</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2020 - King Yachts · Luxury Charter</p>
+        <div style="display:flex;gap:1.5rem">
+            <a href="legal.html" onclick="showTab('mentions');window.scrollTo(0,0);return false;" id="fl-mentions" data-fr="Mentions légales" data-en="Legal Notice">Mentions légales</a>
+            <a href="legal.html" onclick="showTab('confidentialite');window.scrollTo(0,0);return false;" id="fl-conf" data-fr="Confidentialité" data-en="Privacy">Confidentialité</a>
+            <a href="legal.html" onclick="showTab('cgv');window.scrollTo(0,0);return false;" id="fl-cgv" data-fr="CGV" data-en="Terms">CGV</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── LANGUAGE ──────────────────────────────────────────────────────────
+let currentLang = 'fr';
+
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        currentLang = this.dataset.lang;
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        applyLang(currentLang);
+    });
+});
+
+function applyLang(lang) {
+    document.querySelectorAll(`[data-${lang}]`).forEach(el => {
+        const val = el.getAttribute(`data-${lang}`);
+        if (!val) return;
+        const hasChildEl = Array.from(el.childNodes).some(n => n.nodeType === 1 && n.tagName !== 'BR');
+        if (hasChildEl) return;
+        el.textContent = val;
+    });
+}
+
+// ── TABS ──────────────────────────────────────────────────────────────
+function showTab(id) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+
+    const panel = document.getElementById(id);
+    if (panel) panel.classList.add('active');
+
+    // Match tab button by onclick attribute content
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+        if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(id)) {
+            btn.classList.add('active');
+        }
+    });
+
+    // Update footer links active state
+    document.querySelectorAll('.footer-bottom a').forEach(a => a.classList.remove('current'));
+    const flMap = { mentions: 'fl-mentions', confidentialite: 'fl-conf', cgv: 'fl-cgv' };
+    const fl = document.getElementById(flMap[id]);
+    if (fl) fl.classList.add('current');
+}
+
+// ── URL HASH ON LOAD ──────────────────────────────────────────────────
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && ['mentions', 'cgv', 'confidentialite'].includes(hash)) {
+        showTab(hash);
+    }
+});
+
+// ── SMOOTH SCROLL ─────────────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        const target = document.querySelector(href);
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    });
+});
+</script>
+</body>
+</html>
